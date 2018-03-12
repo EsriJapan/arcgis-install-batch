@@ -64,12 +64,24 @@ echo パッチのインストール開始
 echo (5)  ArcGIS 10.5.1 (Desktop, Engine, Server) Spatial Analyst Int and Abs tools Patch
 C:\WINDOWS\system32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-1051-E-SAIAT-Patch.msp" /norestart /passive /qb
 
+REM 2018/03/07公開パッチ
+echo (7) ArcGIS 10.5.1 (Desktop, Engine, Server) Spatial Analyst Zonal Statistics Tool Patch
+C:\WINDOWS\system32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-1051-E-SAZST-Patch.msp" /norestart /passive /qb
+
 
 REM 64-bit OSの場合はバックグラウンドパッチ適用
 IF NOT EXIST "C:\Program Files (x86)" GOTO 64BITPatchesEnd
 
 echo (5)  ArcGIS 10.5.1 (Desktop, Engine, Server) Spatial Analyst Int and Abs tools Patch 64-bit
 C:\WINDOWS\system32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-1051-BGE-SAIAT-Patch.msp" /norestart /passive /qb
+
+REM 2018/02/28公開パッチ
+echo (6) ArcGIS (Desktop, Engine) Background Geoprocessing 64-bit Arcpy Exit and Shutdown Patch
+C:\WINDOWS\system32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-1051-BGE-AES-Patch.msp" /norestart /passive /qb
+
+REM 2018/03/07公開パッチ
+echo (7) ArcGIS 10.5.1 (Desktop, Engine, Server) Spatial Analyst Zonal Statistics Tool Patch
+C:\WINDOWS\system32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-1051-BGE-SAZST-Patch.msp" /norestart /passive /qb
 
 :64BITPatchesEnd
 

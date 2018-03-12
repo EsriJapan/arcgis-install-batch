@@ -68,12 +68,28 @@ echo パッチのインストール開始
 echo (5)  ArcGIS 10.5.1 (Desktop, Engine, Server) Spatial Analyst Int and Abs tools Patch
 C:\WINDOWS\system32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1051-DT-SAIAT-Patch.msp" /norestart /passive /qb
 
+REM 2018/02/28 公開
+echo (6)  ArcGIS 10.5.1 (Desktop, Server) NITF and NCDRD Quality Patch 1
+C:\WINDOWS\system32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1051-DT-NNQ1-PatchB.msp" /norestart /passive /qb
+
+REM 2018/03/07 公開
+echo (8)  ArcGIS 10.5.1 (Desktop, Engine, Server) Spatial Analyst Zonal Statistics Tool Patch
+C:\WINDOWS\system32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1051-DT-SAZST-PatchB.msp" /norestart /passive /qb
+
 
 REM 64-bit OSの場合はバックグラウンドパッチ適用
 IF NOT EXIST "C:\Program Files (x86)" GOTO 64BITPatchesEnd
 
 echo (5)  ArcGIS 10.5.1 (Desktop, Engine, Server) Spatial Analyst Int and Abs tools Patch 64-bit
 C:\WINDOWS\system32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1051-BGDT-SAIAT-Patch.msp" /norestart /passive /qb
+
+REM 2018/02/28 公開
+echo (7)  ArcGIS (Desktop, Engine) Background Geoprocessing 64-bit Arcpy Exit and Shutdown Patch
+C:\WINDOWS\system32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1051-BGDT-AES-Patch.msp" /norestart /passive /qb
+
+REM 2018/03/07 公開
+echo (8)  ArcGIS 10.5.1 (Desktop, Engine, Server) Spatial Analyst Zonal Statistics Tool Patch
+C:\WINDOWS\system32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1051-BGDT-SAZST-Patch.msp" /norestart /passive /qb
 
 :64BITPatchesEnd
 
