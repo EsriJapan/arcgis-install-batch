@@ -11,7 +11,7 @@ set __COMPAT_LAYER=RunAsInvoker
 
 
 
-REM デスクトップのインストール
+REM Engineのアンインストール
 echo ArcGIS Engine 10.5.1のアンインストールを開始します
 
 
@@ -19,14 +19,14 @@ REM 事前に必要なものをアンインストール
 IF not EXIST "C:\Program Files (x86)" GOTO 32BIT
 
 echo MSXML6 64-bit のアンインストール...
-REM install MSXML6
+REM uninstall MSXML6
 C:\WINDOWS\system32\msiexec.exe /X "{FF59CB23-1800-4047-B40C-E20AE7051491}" /norestart /passive /qb
 
 
 
 :32BIT
 echo MSXML6 のアンインストール...
-REM install MSXML6
+REM uninstall MSXML6
 C:\WINDOWS\system32\msiexec.exe /X "{AEB9948B-4FF2-47C9-990E-47014492A0FE}" /norestart /passive /qb
 
 
@@ -51,7 +51,7 @@ echo (6) ArcGIS (Desktop, Engine) Background Geoprocessing 64-bit Arcpy Exit and
 C:\WINDOWS\system32\msiexec.exe /I "{C449F6FA-DC86-410E-9F7E-B4986717B50A}" MSIPATCHREMOVE="{D6BFD000-79F6-40D8-A528-0E0B4795ED2F}" /norestart /passive /qb
 
 REM 2018/03/07公開パッチ
-echo (7) ArcGIS 10.5.1 (Desktop, Engine, Server) Spatial Analyst Zonal Statistics Tool Patch
+echo (7) ArcGIS 10.5.1 (Desktop, Engine, Server) Spatial Analyst Zonal Statistics Tool Patch 64-bit
 C:\WINDOWS\system32\msiexec.exe /I "{C449F6FA-DC86-410E-9F7E-B4986717B50A}" MSIPATCHREMOVE="{48F114B7-EDFA-4244-8A32-319FE50E730C}" /norestart /passive /qb
 
 :64BITPatchesEnd
@@ -69,7 +69,7 @@ echo ArcGIS Engine 10.5.1 日本語パック のアンインストール...
 C:\WINDOWS\system32\msiexec.exe /X "{668F2851-05CC-479F-8DB2-8A1F346EA360}" /norestart /passive /qb
 
 echo ArcGIS Engine 10.5.1 のアンインストール... アンインストールにはしばらく時間がかかります...
-REM Install ArcGIS Engine 10.5.1
+REM uninstall ArcGIS Engine 10.5.1
 C:\WINDOWS\system32\msiexec.exe /X "{C089C13D-F409-4385-B303-9A6DFCB60DE8}" /norestart /passive /qb
 
 

@@ -88,7 +88,7 @@ echo (7)  ArcGIS (Desktop, Engine) Background Geoprocessing 64-bit Arcpy Exit an
 C:\WINDOWS\system32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1051-BGDT-AES-Patch.msp" /norestart /passive /qb
 
 REM 2018/03/07 ŒöŠJ
-echo (8)  ArcGIS 10.5.1 (Desktop, Engine, Server) Spatial Analyst Zonal Statistics Tool Patch
+echo (8)  ArcGIS 10.5.1 (Desktop, Engine, Server) Spatial Analyst Zonal Statistics Tool Patch 64-bit
 C:\WINDOWS\system32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1051-BGDT-SAZST-Patch.msp" /norestart /passive /qb
 
 :64BITPatchesEnd

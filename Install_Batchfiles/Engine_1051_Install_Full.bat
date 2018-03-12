@@ -10,7 +10,7 @@ REM 相対パスで処理するためバッチファイルの実行ディレクトリを設定
 set curpath=%~dp0
 
 
-REM デスクトップのインストール
+REM Engineのインストール
 echo ArcGIS Engine 10.5.1のインストールを開始します
 
 
@@ -80,7 +80,7 @@ echo (6) ArcGIS (Desktop, Engine) Background Geoprocessing 64-bit Arcpy Exit and
 C:\WINDOWS\system32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-1051-BGE-AES-Patch.msp" /norestart /passive /qb
 
 REM 2018/03/07公開パッチ
-echo (7) ArcGIS 10.5.1 (Desktop, Engine, Server) Spatial Analyst Zonal Statistics Tool Patch
+echo (7) ArcGIS 10.5.1 (Desktop, Engine, Server) Spatial Analyst Zonal Statistics Tool Patch 64-bit
 C:\WINDOWS\system32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-1051-BGE-SAZST-Patch.msp" /norestart /passive /qb
 
 :64BITPatchesEnd
