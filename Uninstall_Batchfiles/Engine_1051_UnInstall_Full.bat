@@ -1,11 +1,15 @@
 REM ArcGIS Engine 10.5.1の一括アンインストール
 
 @echo off
-REM コマンドでの実行の場合
-REM MSIファイルのアンインストール
-REM msiexec /X <xxxx\xxxx.msi> or mxiexec /X <PruductGUID>
-REM MSPファイルのアンインストール
-REM msiexec /I <ProductGUID> MSIPATCHREMOVE=<PatchGUID>
+REM MSIファイルのアンインストール コマンド
+REM >msiexec /X <xxxx\xxxx.msi> or mxiexec /X <PruductGUID>
+REM 注1)MSIのGUIDの値は「orca」で *.msiを開き、[Tables] > [Property] > [ProductCode]の値を指定します
+REM 
+REM MSPファイルのアンインストール コマンド
+REM >msiexec /I <ProductGUID> MSIPATCHREMOVE=<PatchGUID>
+REM 注2)mspのGUIDの値は「orca」で *.mspを開き、[View]メニュー > [Summary Information]の画面の
+REM [Patch Code]=<PatchGUID>と[Targets]=<ProductGUID>の値を指定します
+REM 
 
 set __COMPAT_LAYER=RunAsInvoker
 
