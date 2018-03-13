@@ -1,4 +1,6 @@
+REM 
 REM ArcGIS Pro 2.0の一括インストール
+REM 
 
 @echo off
 REM 以下を参考にして編集しました
