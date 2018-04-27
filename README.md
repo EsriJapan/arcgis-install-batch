@@ -12,6 +12,9 @@ ArcGIS Desktop 10.5.1 / ArcGIS Engine 10.5.1 / ArcGIS Pro 2.0 用のものをサ
 
 - [Uninstall_Batchifiles] - アンインストール用の**バッチファイル**の格納先
 
+- [Ps_Scripts] - MSI, MSP からアンインストール用の**バッチファイルコマンド**を作成するPowerShellのスクリプト
+
+
 ## ライセンス
 Copyright 2018 Esri Japan Corporation.
 
