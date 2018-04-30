@@ -28,7 +28,7 @@ Process {
         $params = "/norestart /passive /qb"
 
         # MSPファイルから必要な情報を抽出してUninstallコマンドを作成
-        $windowsInstaller = New-Object -com WindowsInstaller.Installer
+        $windowsInstaller = New-Object -ComObject WindowsInstaller.Installer
         $mspdatabase = $windowsInstaller.GetType().InvokeMember("OpenDatabase", "InvokeMethod", $Null, $windowsInstaller, $($patchnamepath.FullName, 32))
         $summaryinfo = $mspdatabase.GetType().InvokeMember("SummaryInformation", "GetProperty", $Null, $mspdatabase, $Null)
         $propcnt = $summaryinfo.GetType().InvokeMember("PropertyCount", "GetProperty", $Null, $summaryinfo, $Null)
