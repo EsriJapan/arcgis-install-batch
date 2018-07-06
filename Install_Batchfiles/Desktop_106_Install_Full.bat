@@ -144,19 +144,32 @@ echo ArcGIS Desktop 10.6のインストール終了
 REM パッチのインストール
 echo パッチのインストール開始
 
-echo (3)  ArcGIS 10.6 (Desktop, Engine) ECW Patch
+echo (2)  ArcGIS 10.6 (Desktop, Engine) ECW Patch
 %windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-106-DT-ECW-Patch.msp" /norestart /passive /qb
+
+REM 7/5 公開の国内対応ツールパッチ
+echo (3)  ArcGIS Desktop 10.6 国内対応パック 変換ツール パッチ
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\JpnPack_Desktop10_6_patch1.msp" /norestart /passive /qb
+
 
 
 
 REM 64-bit OSの場合はバックグラウンドパッチ適用
 IF NOT EXIST "%ProgramFiles(x86)%" GOTO 64BITPatchesEnd
 
-echo (2)  ArcGIS (Desktop, Engine) Background Geoprocessing 64-bit Arcpy Exit and Shutdown Patch
+echo (1)  ArcGIS (Desktop, Engine) Background Geoprocessing 64-bit Arcpy Exit and Shutdown Patch
 %windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-106-BGDT-AES-Patch.msp" /norestart /passive /qb
 
-echo (3)  ArcGIS 10.6 (Desktop, Engine) ECW Patch 64-bit
+echo (2)  ArcGIS 10.6 (Desktop, Engine) ECW Patch 64-bit
 %windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-106-BGDT-ECW-Patch.msp" /norestart /passive /qb
+
+REM 7/5 公開の国内対応ツールパッチ 64-bit
+echo (3)  ArcGIS Desktop 10.6 国内対応パック 変換ツール パッチ 64-bit
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\JpnPack_Desktop10_6_patch1_BG.msp" /norestart /passive /qb
+
+
+
+echo 
 
 :64BITPatchesEnd
 
