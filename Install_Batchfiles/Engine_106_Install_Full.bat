@@ -84,11 +84,14 @@ endlocal
 REM 結果の表示
 IF MINOR gtr 10 (
 REM  ECHO "VC++2017のmsvcp140.dllが入っている"
-) ELSE (
-REM  ECHO "VC++2015のmsvcp140.dllが入っている"
-  echo Microsoft Visual C++ 2017 再配布可能(x86)パッケージ のインストール...
-  "%curpath%\Engine_Japanese\SetupFiles\Support\VCREDIST\vc_redist.x86.exe" /norestart /passive /qb
+GOTO VC2017END
 )
+REM ELSE (
+REM  ECHO "VC++2015のmsvcp140.dllが入っている"
+REM )
+echo Microsoft Visual C++ 2017 再配布可能(x86)パッケージ のインストール...
+"%curpath%\Engine_Japanese\SetupFiles\Support\VCREDIST\vc_redist.x86.exe" /norestart /passive /qb
+
 
 :VC2017END
 
@@ -120,10 +123,13 @@ GOTO VC201764END
 :VC201764SKIP
 IF MINOR gtr 10 (
 REM ECHO "VC++2017のmsvcp140.dll"
-) ELSE (
-  echo Microsoft Visual C++ 2017 再配布可能(x64)パッケージ のインストール...
-  "%curpath%\EngineBackgroundGP_Japanese\SetupFiles\Support\VCREDIST\vc_redist.x64.exe" /norestart /passive /qb
+GOTO VC201764END
 )
+REM ELSE (
+REM 
+REM )
+echo Microsoft Visual C++ 2017 再配布可能(x64)パッケージ のインストール...
+"%curpath%\EngineBackgroundGP_Japanese\SetupFiles\Support\VCREDIST\vc_redist.x64.exe" /norestart /passive /qb
 
 :VC201764END
 
