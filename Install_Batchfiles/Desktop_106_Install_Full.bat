@@ -81,6 +81,8 @@ REM ECHO %MINOR%
 
 endlocal
 
+
+
 REM 結果の表示
 IF MINOR gtr 10 (
 REM  ECHO "VC++2017のmsvcp140.dllが入っている"
@@ -91,6 +93,7 @@ REM  ECHO "VC++2015のmsvcp140.dllが入っている"
 REM )
 echo Microsoft Visual C++ 2017 再配布可能(x86)パッケージ のインストール...
 "%curpath%\Desktop_Japanese\SetupFiles\Support\VCREDIST\vc_redist.x86.exe" /norestart /passive /qb
+
 
 
 :VC2017END
@@ -157,7 +160,9 @@ REM 7/5 公開の国内対応ツールパッチ
 echo (3)  ArcGIS Desktop 10.6 国内対応パック 変換ツール パッチ
 %windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\JpnPack_Desktop10_6_patch1.msp" /norestart /passive /qb
 
-
+REM 7/17 公開のパッチ
+echo (4)  ArcGIS 10.6 (Desktop, Engine, Server) File Deletion and Lookup Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-106-DT-FDL-Patch.msp" /norestart /passive /qb
 
 
 REM 64-bit OSの場合はバックグラウンドパッチ適用
@@ -173,7 +178,9 @@ REM 7/5 公開の国内対応ツールパッチ 64-bit
 echo (3)  ArcGIS Desktop 10.6 国内対応パック 変換ツール パッチ 64-bit
 %windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\JpnPack_Desktop10_6_patch1_BG.msp" /norestart /passive /qb
 
-
+REM 7/17 公開のパッチ
+echo (4)  ArcGIS 10.6 (Desktop, Engine, Server) File Deletion and Lookup Patch 64-bit
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-106-BGDT-FDL-Patch.msp" /norestart /passive /qb
 
 echo 
 

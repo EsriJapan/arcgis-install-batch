@@ -92,7 +92,6 @@ REM )
 echo Microsoft Visual C++ 2017 再配布可能(x86)パッケージ のインストール...
 "%curpath%\Engine_Japanese\SetupFiles\Support\VCREDIST\vc_redist.x86.exe" /norestart /passive /qb
 
-
 :VC2017END
 
 
@@ -131,6 +130,7 @@ REM )
 echo Microsoft Visual C++ 2017 再配布可能(x64)パッケージ のインストール...
 "%curpath%\EngineBackgroundGP_Japanese\SetupFiles\Support\VCREDIST\vc_redist.x64.exe" /norestart /passive /qb
 
+
 :VC201764END
 
 
@@ -151,6 +151,9 @@ echo パッチのインストール開始
 echo (3)  ArcGIS 10.6 (Desktop, Engine) ECW Patch
 %windir%\System32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-106-E-ECW-Patch.msp" /norestart /passive /qb
 
+REM 07/17 公開のパッチ
+echo (4)  ArcGIS 10.6 (Desktop, Engine, Server) File Deletion and Lookup Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-106-E-FDL-Patch.msp" /norestart /passive /qb
 
 
 REM 64-bit OSの場合はバックグラウンドパッチ適用
@@ -161,6 +164,10 @@ echo (2)  ArcGIS (Desktop, Engine) Background Geoprocessing 64-bit Arcpy Exit an
 
 echo (3)  ArcGIS 10.6 (Desktop, Engine) ECW Patch 64-bit
 %windir%\System32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-106-BGE-ECW-Patch.msp" /norestart /passive /qb
+
+REM 07/17 公開のパッチ
+echo (4)  ArcGIS 10.6 (Desktop, Engine, Server) File Deletion and Lookup Patch 64-bit
+%windir%\System32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-106-BGE-FDL-Patch.msp" /norestart /passive /qb
 
 
 :64BITPatchesEnd

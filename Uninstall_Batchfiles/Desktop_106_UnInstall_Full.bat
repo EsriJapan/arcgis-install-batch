@@ -43,6 +43,9 @@ REM 7/5 公開の国内対応ツールパッチ
 echo (3)  ArcGIS Desktop 10.6 国内対応パック 変換ツール パッチ
 %windir%\System32\msiexec.exe /I "{9803548D-4631-423B-857F-09D32E7E6627}" MSIPATCHREMOVE="{8CED100A-79ED-4A83-92DB-D9EF892A7663}" /norestart /passive /qb
 
+REM 7/17 公開のパッチ
+echo (4)  ArcGIS 10.6 (Desktop, Engine, Server) File Deletion and Lookup Patch
+%windir%\System32\msiexec.exe /I "{F8206086-367E-44E4-9E24-92E9E057A63D}" MSIPATCHREMOVE="{AD50CC08-CC24-42B1-A59A-637D9E831885}" /norestart /passive /qb
 
 
 REM 64-bit OSの場合はバックグラウンドパッチ適用
@@ -58,6 +61,9 @@ REM 7/5 公開の国内対応ツールパッチ 64-bit
 echo (3)  ArcGIS Desktop 10.6 国内対応パック 変換ツール パッチ 64-bit
 %windir%\System32\msiexec.exe /I "{FBFF340D-8ECE-43A3-87FC-A694DB829614}" MSIPATCHREMOVE="{6007CBC0-92A5-48FE-B33F-671E649F7D13}" /norestart /passive /qb
 
+REM 7/17 公開のパッチ
+echo (4)  ArcGIS 10.6 (Desktop, Engine, Server) File Deletion and Lookup Patch 64-bit
+%windir%\System32\msiexec.exe /I "{D9A37390-98EF-4DDD-BD1E-06BBADFE8CE6}" MSIPATCHREMOVE="{86C46CF9-23BC-46D4-B6D6-EBF20E95296F}" /norestart /passive /qb
 
 
 :64BITPatchesEnd

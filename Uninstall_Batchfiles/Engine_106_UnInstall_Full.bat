@@ -40,6 +40,10 @@ echo パッチのアンインストール開始
 echo (3)  ArcGIS 10.6 (Desktop, Engine) ECW Patch
 %windir%\System32\msiexec.exe /I "{D2CD36EF-5E54-4E2F-A26A-0D99999C25D1}" MSIPATCHREMOVE="{6A6C2BCE-F201-4346-A3DB-D0B096DEFCF4}" /norestart /passive /qb
 
+REM 07/17 公開のパッチ
+echo (4)  ArcGIS 10.6 (Desktop, Engine, Server) File Deletion and Lookup Patch
+%windir%\System32\msiexec.exe /I "{D2CD36EF-5E54-4E2F-A26A-0D99999C25D1}" MSIPATCHREMOVE="{BDB63730-B238-4638-A7C2-9C130A77F0CD}" /norestart /passive /qb
+
 
 REM 64-bit OSの場合はバックグラウンドパッチ適用
 IF NOT EXIST "C:\Program Files (x86)" GOTO 64BITPatchesEnd
@@ -50,6 +54,9 @@ echo (2)  ArcGIS (Desktop, Engine) Background Geoprocessing 64-bit Arcpy Exit an
 echo (3)  ArcGIS 10.6 (Desktop, Engine) ECW Patch 64-bit
 %windir%\System32\msiexec.exe /I "{D635F9C0-3E5A-4D55-BEE6-36C67194D33A}" MSIPATCHREMOVE="{CDAA0C3C-511B-4D4D-ABAF-8A4C981A1FB5}" /norestart /passive /qb
 
+REM 07/17 公開のパッチ
+echo (4)  ArcGIS 10.6 (Desktop, Engine, Server) File Deletion and Lookup Patch 64-bit
+%windir%\System32\msiexec.exe /I "{D635F9C0-3E5A-4D55-BEE6-36C67194D33A}" MSIPATCHREMOVE="{18CA2386-0B48-4143-A4E6-416CFBD110CE}" /norestart /passive /qb
 
 
 :64BITPatchesEnd
