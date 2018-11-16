@@ -43,6 +43,9 @@ REM
 REM [参考：wmicを使ってバッチファイルでバージョンを取得]:
 REM https://stackoverflow.com/questions/25162348/find-the-version-of-a-installed-program-from-batch-file
 
+REM VCのマイナーバージョン比較用
+set VCVERSION=10
+
 IF EXIST "%windir%\System32\msvcp140.dll" GOTO VC2017SKIP
 echo Microsoft Visual C++ 2017 再配布可能(x86)パッケージ のインストール...
 "%curpath%\Engine_Japanese\SetupFiles\Support\VCREDIST\vc_redist.x86.exe" /norestart /passive /qb
@@ -82,7 +85,7 @@ REM ECHO %MINOR%
 endlocal
 
 REM 結果の表示
-IF MINOR gtr 10 (
+IF MINOR gtr VCVERSION (
 REM  ECHO "VC++2017のmsvcp140.dllが入っている"
 GOTO VC2017END
 )
@@ -120,7 +123,7 @@ GOTO VC201764END
 
 
 :VC201764SKIP
-IF MINOR gtr 10 (
+IF MINOR gtr VCVERSION (
 REM ECHO "VC++2017のmsvcp140.dll"
 GOTO VC201764END
 )
