@@ -167,6 +167,10 @@ REM 7/17 公開のパッチ
 echo (4)  ArcGIS 10.6 (Desktop, Engine, Server) File Deletion and Lookup Patch
 %windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-106-DT-FDL-Patch.msp" /norestart /passive /qb
 
+REM 11/27 公開のパッチ
+echo (5)  ArcGIS 10.6 (Desktop) Buffer Wizard Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-106-DT-BW-Patch.msp" /norestart /passive /qb
+
 
 REM 64-bit OSの場合はバックグラウンドパッチ適用
 IF NOT EXIST "%ProgramFiles(x86)%" GOTO 64BITPatchesEnd

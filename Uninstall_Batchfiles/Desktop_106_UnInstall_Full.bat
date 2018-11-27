@@ -47,6 +47,9 @@ REM 7/17 公開のパッチ
 echo (4)  ArcGIS 10.6 (Desktop, Engine, Server) File Deletion and Lookup Patch
 %windir%\System32\msiexec.exe /I "{F8206086-367E-44E4-9E24-92E9E057A63D}" MSIPATCHREMOVE="{AD50CC08-CC24-42B1-A59A-637D9E831885}" /norestart /passive /qb
 
+REM 11/14 公開のパッチ
+echo (5)  ArcGIS 10.6 (Desktop) Buffer Wizard Patch
+%windir%\System32\msiexec.exe /I "{F8206086-367E-44E4-9E24-92E9E057A63D}" MSIPATCHREMOVE="{43AAA59F-9829-4379-B6B3-C5B93CC51227}" /norestart /passive /qb
 
 REM 64-bit OSの場合はバックグラウンドパッチ適用
 IF NOT EXIST "%ProgramFiles(x86)%" GOTO 64BITPatchesEnd
