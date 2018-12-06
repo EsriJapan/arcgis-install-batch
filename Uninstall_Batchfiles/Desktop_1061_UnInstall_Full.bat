@@ -1,0 +1,107 @@
+@echo off
+REM ArcGIS Desktop 10.6 の一括アンインストール
+REM MSIファイルのアンインストール コマンド
+REM >msiexec /X <xxxx\xxxx.msi> or mxiexec /X <PruductGUID>
+REM 注1)MSIのGUIDの値は「orca」で *.msiを開き、[Tables] > [Property] > [ProductCode]の値を指定します
+REM 
+REM MSPファイルのアンインストール コマンド
+REM >msiexec /I <ProductGUID> MSIPATCHREMOVE=<PatchGUID>
+REM 注2)mspのGUIDの値は「orca」で *.mspを開き、[View]メニュー > [Summary Information]の画面の
+REM [Patch Code]=<PatchGUID>と[Targets]=<ProductGUID>の値を指定します
+REM 
+
+set __COMPAT_LAYER=RunAsInvoker
+
+
+
+REM デスクトップのインストール
+echo ArcGIS Desktop 10.6.1 のアンインストールを開始します
+
+
+REM 事前に必要なものをアンインストール
+IF not EXIST "%ProgramFiles(x86)%" GOTO 32BIT
+
+REM 10.6.1ではMSXMLはインストーラにない
+REM echo MSXML6 64-bit のアンインストール...
+REM install MSXML6
+REM %windir%\System32\msiexec.exe /X "{FF59CB23-1800-4047-B40C-E20AE7051491}" /norestart /passive /qb
+
+
+
+:32BIT
+REM echo MSXML6 のアンインストール...
+REM install MSXML6
+REM %windir%\System32\msiexec.exe /X "{AEB9948B-4FF2-47C9-990E-47014492A0FE}" /norestart /passive /qb
+
+
+REM パッチのアンインストール
+echo パッチのアンインストール開始
+
+echo 01_Buffering Degenerated Polygon Patch
+%windir%\System32\msiexec.exe /I "{FA2E2CBC-0697-4C71-913E-8C65B5A611E8}" MSIPATCHREMOVE="{70E7DEB8-4A1B-4381-81B9-BE28D7337428}" /norestart /passive /qb
+
+echo 02_Geoprocessing Service Patch
+%windir%\System32\msiexec.exe /I "{FA2E2CBC-0697-4C71-913E-8C65B5A611E8}" MSIPATCHREMOVE="{0E1A2EDB-F55E-475C-B5CE-31736BD15B6C}" /norestart /passive /qb
+
+echo 03_JPEG NoData Patch
+%windir%\System32\msiexec.exe /I "{FA2E2CBC-0697-4C71-913E-8C65B5A611E8}" MSIPATCHREMOVE="{4EEC5CFB-4D59-4240-8D7B-F818CC70CD72}" /norestart /passive /qb
+
+echo 04_Buffer Wizard Patch
+%windir%\System32\msiexec.exe /I "{FA2E2CBC-0697-4C71-913E-8C65B5A611E8}" MSIPATCHREMOVE="{C60D7F0E-BF3A-4D38-B406-FFC600ACCAE2}" /norestart /passive /qb
+
+echo 05_Raster Patch
+%windir%\System32\msiexec.exe /I "{FA2E2CBC-0697-4C71-913E-8C65B5A611E8}" MSIPATCHREMOVE="{FDDBE7B8-16B9-4E29-BF34-0D64BF4CB384}" /norestart /passive /qb
+
+
+REM 64-bit OSの場合はバックグラウンドパッチ適用
+IF NOT EXIST "%ProgramFiles(x86)%" GOTO 64BITPatchesEnd
+
+echo 01_Buffering Degenerated Polygon Patch 64-bit
+%windir%\System32\msiexec.exe /I "{E02F36E6-2ED8-47A9-A6D2-C7C9AEFDE364}" MSIPATCHREMOVE="{5CEBD126-1C98-4B90-BA5C-191EA0C17A25}" /norestart /passive /qb
+
+echo 02_Geoprocessing Service Patch 64-bit
+%windir%\System32\msiexec.exe /I "{E02F36E6-2ED8-47A9-A6D2-C7C9AEFDE364}" MSIPATCHREMOVE="{0187A1E4-96D0-44FE-B70E-B789BA16FC9C}" /norestart /passive /qb
+
+echo 03_JPEG NoData Patch 64-bit
+%windir%\System32\msiexec.exe /I "{E02F36E6-2ED8-47A9-A6D2-C7C9AEFDE364}" MSIPATCHREMOVE="{880FF969-6CC6-4AF7-8672-F55865FE871D}" /norestart /passive /qb
+
+
+:64BITPatchesEnd
+
+echo パッチのアンインストール終了
+
+
+REM ArcGIS Dektop本体のアンインストール
+REM 国内対応パックのアンインストール
+echo ArcGIS Desktop 10.6.1 国内対応パック のアンインストール...
+%windir%\System32\msiexec.exe /X "{78D30A4B-0615-4FD5-85F2-0C24685CE644}" /norestart /passive /qb
+
+REM 日本語パックのアンインストール
+echo ArcGIS Desktop 10.6.1 日本語パック のアンインストール...
+%windir%\System32\msiexec.exe /X "{712C033E-5E24-4493-9E65-90F715E39348}" /norestart /passive /qb
+
+echo ArcGIS Desktop 10.6.1 のアンインストール... アンインストールにはしばらく時間がかかります...
+REM Install ArcGIS Desktop 10.6
+%windir%\System32\msiexec.exe /X "{FA2E2CBC-0697-4C71-913E-8C65B5A611E8}" /norestart /passive /qb
+
+
+
+IF not EXIST "%ProgramFiles(x86)%" GOTO 64BITEND
+
+echo ArcGIS Desktop 10.6.1 64-bit Background Geoprocessing のアンインストール...
+REM 64-bit Background Geoprocessing Extension
+%windir%\System32\msiexec.exe /X "{E02F36E6-2ED8-47A9-A6D2-C7C9AEFDE364}" /norestart /passive /qb
+
+echo ArcGIS Desktop 10.6.1 64-bit 国内対応パックのアンインストール ...
+REM 国内対応パック 64-bit のアンインストール
+%windir%\System32\msiexec.exe /X "{CC15B695-CA16-4ED7-8736-1DEB499A9204}" /norestart /passive /qb
+
+
+:64BITEND
+
+echo ArcGIS Desktop 10.6.1 のアンインストール終了
+
+
+
+pause
+exit /b
