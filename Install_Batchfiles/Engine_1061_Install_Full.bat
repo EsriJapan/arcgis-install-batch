@@ -166,6 +166,15 @@ echo (2) 02_Geoprocessing Service Patch
 echo (3) 03_JPEG NoData Patch
 %windir%\System32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-1061-E-JN-Patch.msp" /norestart /passive /qb
 
+REM 2018/12/14 公開パッチ
+echo (4) 04_PostgreSQL Performance and Version 10 Support Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-1061-E-PPVS-Patch.msp" /norestart /passive /qb
+
+REM 2018/12/21 公開パッチ
+echo (5) 05_ArcGIS (Desktop, Engine, Server) 10.6.1 Published Script Tools Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-1061-E-PST-Patch.msp" /norestart /passive /qb
+
+
 REM 64-bit OSの場合はバックグラウンドパッチ適用
 IF NOT EXIST "C:\Program Files (x86)" GOTO 64BITPatchesEnd
 
@@ -177,6 +186,14 @@ echo (2) 02_Geoprocessing Service Patch 64-bit
 
 echo (3) 03_JPEG NoData Patch 64-bit
 %windir%\System32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-1061-BGE-JN-Patch.msp" /norestart /passive /qb
+
+REM 2018/12/14 公開パッチ
+echo (4) 04_PostgreSQL Performance and Version 10 Support Patch 64-bit
+%windir%\System32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-1061-BGE-PPVS-Patch.msp" /norestart /passive /qb
+
+REM 2018/12/21 公開パッチ
+echo (5) 05_ArcGIS (Desktop, Engine, Server) 10.6.1 Published Script Tools Patch 64-bit
+%windir%\System32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-1061-BGE-PST-Patch.msp" /norestart /passive /qb
 
 
 :64BITPatchesEnd

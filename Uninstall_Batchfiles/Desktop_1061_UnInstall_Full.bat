@@ -52,6 +52,13 @@ echo 04_Buffer Wizard Patch
 echo 05_Raster Patch
 %windir%\System32\msiexec.exe /I "{FA2E2CBC-0697-4C71-913E-8C65B5A611E8}" MSIPATCHREMOVE="{FDDBE7B8-16B9-4E29-BF34-0D64BF4CB384}" /norestart /passive /qb
 
+REM 2018/12/14公開パッチ
+echo 06_PostgreSQL Performance and Version 10 Support Patch
+%windir%\System32\msiexec.exe /I "{FA2E2CBC-0697-4C71-913E-8C65B5A611E8}" MSIPATCHREMOVE="{550BB9FA-A975-43D0-816F-57402BDEE06A}" /norestart /passive /qb
+
+REM 2018/12/21公開パッチ
+echo 07_Published Script Tools Patch
+%windir%\System32\msiexec.exe /I "{FA2E2CBC-0697-4C71-913E-8C65B5A611E8}" MSIPATCHREMOVE="{8AFF43C7-6136-4CAD-AA65-D56C652AD0F4}" /norestart /passive /qb
 
 REM 64-bit OSの場合はバックグラウンドパッチ適用
 IF NOT EXIST "%ProgramFiles(x86)%" GOTO 64BITPatchesEnd
@@ -65,6 +72,13 @@ echo 02_Geoprocessing Service Patch 64-bit
 echo 03_JPEG NoData Patch 64-bit
 %windir%\System32\msiexec.exe /I "{E02F36E6-2ED8-47A9-A6D2-C7C9AEFDE364}" MSIPATCHREMOVE="{880FF969-6CC6-4AF7-8672-F55865FE871D}" /norestart /passive /qb
 
+REM 2018/12/14公開パッチ
+echo 06_PostgreSQL Performance and Version 10 Support Patch 64-bit
+%windir%\System32\msiexec.exe /I "{E02F36E6-2ED8-47A9-A6D2-C7C9AEFDE364}" MSIPATCHREMOVE="{C71BA958-91E9-4846-86AF-1583FFD04C15}" /norestart /passive /qb
+
+REM 2018/12/21公開パッチ
+echo 07_Published Script Tools Patch 64-bit
+%windir%\System32\msiexec.exe /I "{E02F36E6-2ED8-47A9-A6D2-C7C9AEFDE364}" MSIPATCHREMOVE="{1D40BDE0-B6D8-402B-82F5-47869A5946ED}" /norestart /passive /qb
 
 :64BITPatchesEnd
 

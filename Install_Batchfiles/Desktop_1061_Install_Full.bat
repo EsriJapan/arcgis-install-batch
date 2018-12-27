@@ -90,7 +90,7 @@ endlocal
 
 REM 結果の表示
 IF MINOR gtr VCVERSION (
-REM  ECHO "VC++2017のmsvcp140.dllが入っている(MINOR　12 : UPDATE5)"
+REM  ECHO "VC++2017のmsvcp140.dllが入っている(MINOR 12 : UPDATE5)"
 GOTO VC2017END
 )
 REM ELSE (
@@ -129,7 +129,7 @@ GOTO VC201764END
 
 :VC201764SKIP
 IF MINOR gtr VCVERSION (
-REM ECHO "VC++2017のmsvcp140.dll(MINOR　12 : UPDATE5)"
+REM ECHO "VC++2017のmsvcp140.dll(MINOR 12 : UPDATE5)"
 GOTO VC201764END
 )
 REM ELSE (
@@ -173,6 +173,15 @@ echo 04_Buffer Wizard Patch
 echo 05_Raster Patch
 %windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1061-DT-R-Patch.msp" /norestart /passive /qb
 
+REM 2018/12/14公開パッチ
+echo 06_PostgreSQL Performance and Version 10 Support Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1061-DT-PPVS-Patch.msp" /norestart /passive /qb
+
+REM 2018/12/21公開パッチ
+echo 07_Published Script Tools Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1061-DT-PST-Patch.msp" /norestart /passive /qb
+
+
 REM 64-bit OSの場合はバックグラウンドパッチ適用
 IF NOT EXIST "%ProgramFiles(x86)%" GOTO 64BITPatchesEnd
 
@@ -186,6 +195,13 @@ echo 02_Geoprocessing Service Patch 64-bit
 echo 03_JPEG NoData Patch 64-bit
 %windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1061-BGDT-JN-Patch.msp" /norestart /passive /qb
 
+REM 2018/12/14公開パッチ
+echo 06_PostgreSQL Performance and Version 10 Support Patch 64-bit
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1061-BGDT-PPVS-Patch.msp" /norestart /passive /qb
+
+REM 2018/12/21公開パッチ
+echo 07_Published Script Tools Patch 64-bit
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1061-BGDT-PST-Patch.msp" /norestart /passive /qb
 
 
 echo 
