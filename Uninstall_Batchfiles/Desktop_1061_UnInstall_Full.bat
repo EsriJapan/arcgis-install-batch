@@ -60,6 +60,15 @@ REM 2018/12/21公開パッチ
 echo 07_Published Script Tools Patch
 %windir%\System32\msiexec.exe /I "{FA2E2CBC-0697-4C71-913E-8C65B5A611E8}" MSIPATCHREMOVE="{8AFF43C7-6136-4CAD-AA65-D56C652AD0F4}" /norestart /passive /qb
 
+REM 2019/01/25公開パッチ
+echo 08_Importing Raster to Enterprise Geodatabase Patch
+%windir%\System32\msiexec.exe /I "{FA2E2CBC-0697-4C71-913E-8C65B5A611E8}" MSIPATCHREMOVE="{AE7C856B-1E13-4329-A833-0DC51964821F}" /norestart /passive /qb
+
+REM 2019/02/01公開パッチ
+echo 09_TLS Patch
+%windir%\System32\msiexec.exe /I "{FA2E2CBC-0697-4C71-913E-8C65B5A611E8}" MSIPATCHREMOVE="{E0AD42EA-527B-4C19-8674-6C10CA08ECDB}" /norestart /passive /qb
+
+
 REM 64-bit OSの場合はバックグラウンドパッチ適用
 IF NOT EXIST "%ProgramFiles(x86)%" GOTO 64BITPatchesEnd
 

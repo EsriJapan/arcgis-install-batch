@@ -181,6 +181,13 @@ REM 2018/12/21公開パッチ
 echo 07_Published Script Tools Patch
 %windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1061-DT-PST-Patch.msp" /norestart /passive /qb
 
+REM 2019/01/25公開パッチ
+echo 08_Importing Raster to Enterprise Geodatabase Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1061-DT-IREG-Patch.msp" /norestart /passive /qb
+
+REM 2019/02/01公開パッチ
+echo 09_TLS Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1061-DT-TLS-Patch.msp" /norestart /passive /qb
 
 REM 64-bit OSの場合はバックグラウンドパッチ適用
 IF NOT EXIST "%ProgramFiles(x86)%" GOTO 64BITPatchesEnd
