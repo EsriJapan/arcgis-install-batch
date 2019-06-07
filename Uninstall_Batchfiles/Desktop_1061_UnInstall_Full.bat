@@ -68,6 +68,25 @@ REM 2019/02/01公開パッチ
 echo 09_TLS Patch
 %windir%\System32\msiexec.exe /I "{FA2E2CBC-0697-4C71-913E-8C65B5A611E8}" MSIPATCHREMOVE="{E0AD42EA-527B-4C19-8674-6C10CA08ECDB}" /norestart /passive /qb
 
+REM 2019/02/19公開パッチ
+echo 11_Dialog Initialization Performance Patch
+%windir%\System32\msiexec.exe /I "{FA2E2CBC-0697-4C71-913E-8C65B5A611E8}" MSIPATCHREMOVE="{1E7F4F18-B6A0-4C48-864D-3FE6485B8F01}" /norestart /passive /qb
+
+REM 2019/03/06公開パッチ
+echo 13_Exporting Data From a Layer Patch
+%windir%\System32\msiexec.exe /I "{FA2E2CBC-0697-4C71-913E-8C65B5A611E8}" MSIPATCHREMOVE="{BFE02429-260F-4BD1-BE0A-9C44A326AB6F}" /norestart /passive /qb
+
+REM 2019/04/15公開パッチ
+echo 14_Spatial Analyst Patch
+%windir%\System32\msiexec.exe /I "{FA2E2CBC-0697-4C71-913E-8C65B5A611E8}" MSIPATCHREMOVE="{54C45666-BA97-4451-954A-7FB08A0D12DA}" /norestart /passive /qb
+
+REM 2019/06/07公開パッチ
+echo 15_NITF and NCDRD Quality Patch 1
+%windir%\System32\msiexec.exe /I "{FA2E2CBC-0697-4C71-913E-8C65B5A611E8}" MSIPATCHREMOVE="{6A6E0311-C2F1-4FE6-8EA8-4AEAC9F25B0D}" /norestart /passive /qb
+
+REM 2019/06/07公開パッチ
+echo 16_Text Performance Patch
+%windir%\System32\msiexec.exe /I "{FA2E2CBC-0697-4C71-913E-8C65B5A611E8}" MSIPATCHREMOVE="{816084A9-9383-4EDE-A4F8-120C2F0B53A7}" /norestart /passive /qb
 
 REM 64-bit OSの場合はバックグラウンドパッチ適用
 IF NOT EXIST "%ProgramFiles(x86)%" GOTO 64BITPatchesEnd
@@ -88,6 +107,10 @@ echo 06_PostgreSQL Performance and Version 10 Support Patch 64-bit
 REM 2018/12/21公開パッチ
 echo 07_Published Script Tools Patch 64-bit
 %windir%\System32\msiexec.exe /I "{E02F36E6-2ED8-47A9-A6D2-C7C9AEFDE364}" MSIPATCHREMOVE="{1D40BDE0-B6D8-402B-82F5-47869A5946ED}" /norestart /passive /qb
+
+REM 2019/04/15公開パッチ
+echo 14_Spatial Analyst Patch 64-bit
+%windir%\System32\msiexec.exe /I "{E02F36E6-2ED8-47A9-A6D2-C7C9AEFDE364}" MSIPATCHREMOVE="{A37950D4-7815-49DE-A555-99F0E8A361AB}" /norestart /passive /qb
 
 :64BITPatchesEnd
 

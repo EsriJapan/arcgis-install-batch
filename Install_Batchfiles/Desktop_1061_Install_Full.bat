@@ -189,6 +189,28 @@ REM 2019/02/01公開パッチ
 echo 09_TLS Patch
 %windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1061-DT-TLS-Patch.msp" /norestart /passive /qb
 
+
+REM 2019/02/19公開パッチ
+echo 11_Dialog Initialization Performance Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1061-DT-DIP-Patch.msp" /norestart /passive /qb
+
+REM 2019/03/06公開パッチ
+echo 13_Exporting Data From a Layer Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1061-DT-EDL-Patch.msp" /norestart /passive /qb
+
+REM 2019/04/15公開パッチ
+echo 14_Spatial Analyst Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1061-DT-SA-Patch.msp" /norestart /passive /qb
+
+REM 2019/06/07公開パッチ
+echo 15_NITF and NCDRD Quality Patch 1
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1061-DT-NNQ1-Patch.msp" /norestart /passive /qb
+
+REM 2019/06/07公開パッチ
+echo 16_Text Performance Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1061-DT-TP-Patch.msp" /norestart /passive /qb
+
+
 REM 64-bit OSの場合はバックグラウンドパッチ適用
 IF NOT EXIST "%ProgramFiles(x86)%" GOTO 64BITPatchesEnd
 
@@ -209,6 +231,11 @@ echo 06_PostgreSQL Performance and Version 10 Support Patch 64-bit
 REM 2018/12/21公開パッチ
 echo 07_Published Script Tools Patch 64-bit
 %windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1061-BGDT-PST-Patch.msp" /norestart /passive /qb
+
+
+REM 2019/04/15公開パッチ
+echo 14_Spatial Analyst Patch 64-bit
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1061-BGDT-SA-Patch.msp" /norestart /passive /qb
 
 
 echo 

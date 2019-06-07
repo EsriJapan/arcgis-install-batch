@@ -175,6 +175,15 @@ echo (5) 05_ArcGIS (Desktop, Engine, Server) 10.6.1 Published Script Tools Patch
 %windir%\System32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-1061-E-PST-Patch.msp" /norestart /passive /qb
 
 
+REM 2019/04/15 公開パッチ
+echo (7) 07_Spatial Analyst Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-1061-E-SA-Patch.msp" /norestart /passive /qb
+
+REM 2019/06/07 公開パッチ
+echo (8) 08_Text Performance Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-1061-E-TP-Patch.msp" /norestart /passive /qb
+
+
 REM 64-bit OSの場合はバックグラウンドパッチ適用
 IF NOT EXIST "C:\Program Files (x86)" GOTO 64BITPatchesEnd
 
@@ -195,6 +204,10 @@ REM 2018/12/21 公開パッチ
 echo (5) 05_ArcGIS (Desktop, Engine, Server) 10.6.1 Published Script Tools Patch 64-bit
 %windir%\System32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-1061-BGE-PST-Patch.msp" /norestart /passive /qb
 
+
+REM 2019/04/15 公開パッチ
+echo (7) 07_Spatial Analyst Patch 64-bit
+%windir%\System32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-1061-BGE-SA-Patch.msp" /norestart /passive /qb
 
 :64BITPatchesEnd
 

@@ -56,6 +56,15 @@ REM 2018/12/21 公開パッチ
 echo (5) 05_ArcGIS (Desktop, Engine, Server) 10.6.1 Published Script Tools Patch
 %windir%\System32\msiexec.exe /I "{EEAB02A0-0262-44D6-9C06-2E7AD2A3A2B6}" MSIPATCHREMOVE="{B3CBA41D-BEBE-48A7-B4B2-CB19F08C708A}" /norestart /passive /qb
 
+
+REM 2019/04/15 公開パッチ
+echo (7) 07_Spatial Analyst Patch
+%windir%\System32\msiexec.exe /I "{EEAB02A0-0262-44D6-9C06-2E7AD2A3A2B6}" MSIPATCHREMOVE="{303E514B-52B9-4473-97E9-2ED08487F074}" /norestart /passive /qb
+
+REM 2019/06/07 公開パッチ
+echo (8) 08_Text Performance Patch
+%windir%\System32\msiexec.exe /I "{EEAB02A0-0262-44D6-9C06-2E7AD2A3A2B6}" MSIPATCHREMOVE="{DE9B25E3-7DA8-4B6F-8CE7-E2BDFBA3F9EB}" /norestart /passive /qb
+
 REM 64-bit OSの場合はバックグラウンドパッチ適用
 IF NOT EXIST "C:\Program Files (x86)" GOTO 64BITPatchesEnd
 
@@ -76,6 +85,12 @@ echo (4) 04_PostgreSQL Performance and Version 10 Support Patch 64-bit
 REM 2018/12/21 公開パッチ
 echo (5) 05_ArcGIS (Desktop, Engine, Server) 10.6.1 Published Script Tools Patch 64-bit
 %windir%\System32\msiexec.exe /I "{E85FA88B-2EAC-45D9-9F97-F2DFAEBEB2F8}" MSIPATCHREMOVE="{59057D6A-A7AF-4F3B-93DC-80345BF9A25A}" /norestart /passive /qb
+
+
+REM 2019/04/15 公開パッチ
+echo (7) 07_Spatial Analyst Patch 64-bit
+%windir%\System32\msiexec.exe /I "{E85FA88B-2EAC-45D9-9F97-F2DFAEBEB2F8}" MSIPATCHREMOVE="{39D45527-7E5C-404D-9618-35D3B78F1CC1}" /norestart /passive /qb
+
 
 :64BITPatchesEnd
 
