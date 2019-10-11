@@ -6,7 +6,7 @@ ArcGIS Desktop 10.5.1 / ArcGIS Engine 10.5.1 / ArcGIS Pro 2.0 用のものをサ
 ArcGIS Desktop 10.6   / ArcGIS Engine 10.6   / ArcGIS Pro 2.1 用のものをサンプルとして追加しました（2018/06/07）。
 ArcGIS Desktop 10.6.1 / ArcGIS Engine 10.6.1 / ArcGIS Pro 2.2 用のものをサンプルとして追加しました（2018/12/06）。
 ArcGIS Desktop 10.7   / ArcGIS Engine 10.7   / ArcGIS Pro 2.3 用のものをサンプルとして追加しました（2019/07/26）。
-
+ArcGIS Desktop 10.7.1 / ArcGIS Engine 10.7.1 / ArcGIS Pro 2.4 用のものをサンプルとして追加しました（2019/10/11）。
 
 
 インストーラの構成は他のバージョンでもほとんど変わりませんが、パッチファイル（特に任意インストールのパッチファイル）の要/不要はお使いの環境によって異なりますので、適宜判断して編集してください。
