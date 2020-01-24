@@ -210,6 +210,19 @@ REM 2019/06/07公開パッチ
 echo 16_Text Performance Patch
 %windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1061-DT-TP-Patch.msp" /norestart /passive /qb
 
+REM 2019/08/14公開パッチ
+echo 17_Security Update Compatibility Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1061-DT-MWJUN2019SUC-Patch.msp" /norestart /passive /qb
+
+REM 2019/10/07公開パッチ
+echo 18_Support for Oracle 19c Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1061-DT-SO19C-Patch.msp" /norestart /passive /qb
+
+REM 2019/12/23公開パッチ
+echo 19_General Update Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1061-DT-GU-Patch.msp" /norestart /passive /qb
+
+
 
 REM 64-bit OSの場合はバックグラウンドパッチ適用
 IF NOT EXIST "%ProgramFiles(x86)%" GOTO 64BITPatchesEnd
@@ -232,10 +245,13 @@ REM 2018/12/21公開パッチ
 echo 07_Published Script Tools Patch 64-bit
 %windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1061-BGDT-PST-Patch.msp" /norestart /passive /qb
 
-
 REM 2019/04/15公開パッチ
 echo 14_Spatial Analyst Patch 64-bit
 %windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1061-BGDT-SA-Patch.msp" /norestart /passive /qb
+
+REM 2019/10/07公開パッチ
+echo 18_Support for Oracle 19c Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1061-BGDT-SO19C-Patch.msp" /norestart /passive /qb
 
 
 echo 

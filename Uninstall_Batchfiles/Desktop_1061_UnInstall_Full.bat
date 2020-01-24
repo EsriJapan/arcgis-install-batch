@@ -88,6 +88,19 @@ REM 2019/06/07公開パッチ
 echo 16_Text Performance Patch
 %windir%\System32\msiexec.exe /I "{FA2E2CBC-0697-4C71-913E-8C65B5A611E8}" MSIPATCHREMOVE="{816084A9-9383-4EDE-A4F8-120C2F0B53A7}" /norestart /passive /qb
 
+REM 2019/08/14公開パッチ
+echo 17_Security Update Compatibility Patch
+%windir%\System32\msiexec.exe /I "{FA2E2CBC-0697-4C71-913E-8C65B5A611E8}" MSIPATCHREMOVE="{5444F9FF-553D-4457-804C-4B6FDA197391}" /norestart /passive /qb
+
+REM 2019/10/07公開パッチ
+echo 18_Support for Oracle 19c Patch
+%windir%\System32\msiexec.exe /I "{FA2E2CBC-0697-4C71-913E-8C65B5A611E8}" MSIPATCHREMOVE="{995ACE02-2828-4F2D-A83A-257D7ABFD3BF}" /norestart /passive /qb
+
+REM 2019/12/23公開パッチ
+echo 19_General Update Patch
+%windir%\System32\msiexec.exe /I "{FA2E2CBC-0697-4C71-913E-8C65B5A611E8}" MSIPATCHREMOVE="{83FFC09F-B35F-4C1B-8584-3EB93FC375FB}" /norestart /passive /qb
+
+
 REM 64-bit OSの場合はバックグラウンドパッチ適用
 IF NOT EXIST "%ProgramFiles(x86)%" GOTO 64BITPatchesEnd
 
@@ -111,6 +124,11 @@ echo 07_Published Script Tools Patch 64-bit
 REM 2019/04/15公開パッチ
 echo 14_Spatial Analyst Patch 64-bit
 %windir%\System32\msiexec.exe /I "{E02F36E6-2ED8-47A9-A6D2-C7C9AEFDE364}" MSIPATCHREMOVE="{A37950D4-7815-49DE-A555-99F0E8A361AB}" /norestart /passive /qb
+
+REM 2019/10/07公開パッチ
+echo 18_Support for Oracle 19c Patch
+%windir%\System32\msiexec.exe /I "{E02F36E6-2ED8-47A9-A6D2-C7C9AEFDE364}" MSIPATCHREMOVE="{153F4072-0DF3-41E8-BCBE-6CFFF816786B}" /norestart /passive /qb
+
 
 :64BITPatchesEnd
 

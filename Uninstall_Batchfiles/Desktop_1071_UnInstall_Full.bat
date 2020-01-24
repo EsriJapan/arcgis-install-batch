@@ -41,16 +41,16 @@ REM 2019/10/07 リリース時点
 echo 01_Security Update Compatibility Patch
 %windir%\System32\msiexec.exe /I "{69262D87-3697-492B-ABED-765DDC15118B}" MSIPATCHREMOVE="{01005F75-83AA-4E7F-8018-989AFA007F33}" /norestart /passive /qb
 
-
-
+echo 02_Support for Oracle 19c Patch
+%windir%\System32\msiexec.exe /I "{69262D87-3697-492B-ABED-765DDC15118B}" MSIPATCHREMOVE="{C8052F07-416E-4E02-8A06-FD29F418AC69}" /norestart /passive /qb
 
 
 REM 64-bit OSの場合はバックグラウンドパッチ適用
 IF NOT EXIST "%ProgramFiles(x86)%" GOTO 64BITPatchesEnd
 
-REM 2019/10/07 リリース時点なし
-REM echo 01_xxxx
-REM %windir%\System32\msiexec.exe /I "{}" MSIPATCHREMOVE="{}" /norestart /passive /qb
+REM 2019/10/07 リリース時点
+echo 02_Support for Oracle 19c Patch 64-bit
+%windir%\System32\msiexec.exe /I "{39E26603-505E-4CE3-ABC6-5721CADF41D3}" MSIPATCHREMOVE="{25ABFD17-EECA-408A-BD76-22350B51B965}" /norestart /passive /qb
 
 
 :64BITPatchesEnd

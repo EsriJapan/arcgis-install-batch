@@ -42,13 +42,15 @@ echo パッチのアンインストール開始
 echo 01_Security Update Compatibility Patch
 %windir%\System32\msiexec.exe /I "{69262D87-3697-492B-ABED-765DDC15118B}" MSIPATCHREMOVE="{01005F75-83AA-4E7F-8018-989AFA007F33}" /norestart /passive /qb
 
+echo 02_Support for Oracle 19c Patch
+%windir%\System32\msiexec.exe /I "{E06EB984-F5AD-4339-A7C3-5D9035191843}" MSIPATCHREMOVE="{5F617077-6972-42F7-9F42-2C2F62C5F087}" /norestart /passive /qb
 
 REM 64-bit OSの場合はバックグラウンドパッチ適用
 IF NOT EXIST "C:\Program Files (x86)" GOTO 64BITPatchesEnd
 
-REM なしecho 01_
-REM %windir%\System32\msiexec.exe /I "{}" MSIPATCHREMOVE="{}" /norestart /passive /qb
-
+REM 02_Support for Oracle 19c Patch 64-bit
+echo 02_Support for Oracle 19c Patch 64-bit
+%windir%\System32\msiexec.exe /I  "{1AD97CB6-412C-49FC-85D7-14002C369D01}" MSIPATCHREMOVE="{6BF6A062-0C55-4803-AD8F-CE3AF4C18EDB}" /norestart /passive /qb
 
 :64BITPatchesEnd
 

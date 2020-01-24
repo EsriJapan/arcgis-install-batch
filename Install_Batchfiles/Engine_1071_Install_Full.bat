@@ -160,14 +160,17 @@ echo パッチのインストール開始
 echo 01_Security Update Compatibility Patch
 %windir%\System32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-1071-E-MWJUN2019SUC-Patch.msp" /norestart /passive /qb
 
+echo 02_Support for Oracle 19c Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-1071-E-SO19C-Patch.msp" /norestart /passive /qb
+
 
 
 REM 64-bit OSの場合はバックグラウンドパッチ適用
 IF NOT EXIST "C:\Program Files (x86)" GOTO 64BITPatchesEnd
 
-REM パッチなし echo 01_xx
-REM %windir%\System32\msiexec.exe /p "%curpath%\Engine_Patches\xxxx.msp" /norestart /passive /qb
-
+REM 02_Support for Oracle 19c Patch 64-bit
+echo 02_Support for Oracle 19c Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-1071-BGE-SO19C-Patch.msp" /norestart /passive /qb
 
 
 :64BITPatchesEnd

@@ -162,20 +162,17 @@ REM 2019/10/07 リリース時点
 echo 01_Security Update Compatibility Patch
 %windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1071-DT-MWJUN2019SUC-Patch.msp" /norestart /passive /qb
 
-
-
-
-
+echo 02_Support for Oracle 19c Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1071-DT-SO19C-Patch.msp" /norestart /passive /qb
 
 
 
 REM 64-bit OSの場合はバックグラウンドパッチ適用
 IF NOT EXIST "%ProgramFiles(x86)%" GOTO 64BITPatchesEnd
 
-REM 2019/10/07 リリース時点 なし
-REM echo 0x_
-REM %windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-xxxxxx.msp" /norestart /passive /qb
-
+REM 2019/10/07 リリース時点
+echo 02_Support for Oracle 19c Patch 64-bit
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1071-BGDT-SO19C-Patch.msp" /norestart /passive /qb
 
 echo 
 
