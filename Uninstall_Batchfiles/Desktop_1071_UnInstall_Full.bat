@@ -44,6 +44,9 @@ echo 01_Security Update Compatibility Patch
 echo 02_Support for Oracle 19c Patch
 %windir%\System32\msiexec.exe /I "{69262D87-3697-492B-ABED-765DDC15118B}" MSIPATCHREMOVE="{C8052F07-416E-4E02-8A06-FD29F418AC69}" /norestart /passive /qb
 
+REM 2020/02/19 公開パッチ
+echo 03_Spatial Analyst Patch
+%windir%\System32\msiexec.exe /I "{69262D87-3697-492B-ABED-765DDC15118B}" MSIPATCHREMOVE="{02CA8A46-81DD-4159-B8F2-FB0B60734244}" /norestart /passive /qb
 
 REM 64-bit OSの場合はバックグラウンドパッチ適用
 IF NOT EXIST "%ProgramFiles(x86)%" GOTO 64BITPatchesEnd
@@ -52,6 +55,9 @@ REM 2019/10/07 リリース時点
 echo 02_Support for Oracle 19c Patch 64-bit
 %windir%\System32\msiexec.exe /I "{39E26603-505E-4CE3-ABC6-5721CADF41D3}" MSIPATCHREMOVE="{25ABFD17-EECA-408A-BD76-22350B51B965}" /norestart /passive /qb
 
+REM 2020/02/19 公開パッチ
+echo 03_Spatial Analyst Patch 64-bit
+%windir%\System32\msiexec.exe /I "{39E26603-505E-4CE3-ABC6-5721CADF41D3}" MSIPATCHREMOVE="{15B9C40E-BDD2-457E-B70E-C93A8948CFBD}" /norestart /passive /qb
 
 :64BITPatchesEnd
 

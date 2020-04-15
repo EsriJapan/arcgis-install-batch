@@ -163,15 +163,20 @@ echo 01_Security Update Compatibility Patch
 echo 02_Support for Oracle 19c Patch
 %windir%\System32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-1071-E-SO19C-Patch.msp" /norestart /passive /qb
 
-
+REM 2020/02/19 公開パッチ
+echo 03_Spatial Analyst Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-1071-E-SA-Patch.msp" /norestart /passive /qb
 
 REM 64-bit OSの場合はバックグラウンドパッチ適用
 IF NOT EXIST "C:\Program Files (x86)" GOTO 64BITPatchesEnd
 
 REM 02_Support for Oracle 19c Patch 64-bit
-echo 02_Support for Oracle 19c Patch
+echo 02_Support for Oracle 19c Patch 64-bit
 %windir%\System32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-1071-BGE-SO19C-Patch.msp" /norestart /passive /qb
 
+REM 2020/02/19 公開パッチ
+echo 03_Spatial Analyst Patch 64-bit
+%windir%\System32\msiexec.exe /p "%curpath%\Engine_Patches\ArcGIS-1071-BGE-SA-Patch.msp" /norestart /passive /qb
 
 :64BITPatchesEnd
 
