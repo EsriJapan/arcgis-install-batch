@@ -16,8 +16,7 @@
 
 また、アンインストール用の**バッチファイル**のGUIDを調べるためには、Windows SDKに含まれている「orca」等のツールが必要です。
 
-- [Insatll_Batchfiles] - インストール用の**
-- バッチファイル**の格納先
+- [Insatll_Batchfiles] - インストール用の**バッチファイル**の格納先
 
 - [Uninstall_Batchifiles] - アンインストール用の**バッチファイル**の格納先
 
