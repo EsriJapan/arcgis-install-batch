@@ -25,6 +25,9 @@ echo ArcGIS Pro 2.6 のアンインストールを開始します
 REM パッチのアンインストール
 echo パッチのアンインストール開始
 
+echo ArcGIS Pro 2.6 Patch 4 のアンインストール
+%windir%\System32\msiexec.exe /I "{612674FE-4B64-4254-A9AD-C31568C89EA4}" MSIPATCHREMOVE="{DB475E00-FBD7-4F14-B392-063431075902}" /norestart /passive /qb
+
 echo ArcGIS Pro 2.6 Patch 1 のアンインストール
 %windir%\System32\msiexec.exe /I "{612674FE-4B64-4254-A9AD-C31568C89EA4}" MSIPATCHREMOVE="{3FDA2C23-0644-48C3-BAE2-6083CC6A8E07}" /norestart /passive /qb
 
