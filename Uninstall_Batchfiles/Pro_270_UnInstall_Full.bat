@@ -46,8 +46,18 @@ REM ArcGIS Pro 本体のアンインストール
 echo ArcGIS Pro 2.7 本体のアンインストール... アンインストールにはしばらく時間がかかります...
 %windir%\System32\msiexec.exe /X "{FBBB144A-B4BE-49A0-95C4-1007E3A42FA5}" /norestart /passive /qb
 
-
 echo ArcGIS Pro 2.7 のアンインストール終了
+
+
+REM Data Interoperability のアンインストール
+REM echo Data Interoperability Patch 1 アンインストール
+REM %windir%\System32\msiexec.exe /I "{A9BD7866-71EE-4FCB-9AB8-FE03BEA78C32}" MSIPATCHREMOVE="{A5965344-726E-4EFB-939E-EDC1B29B72ED}" /norestart /passive /qb
+REM echo Data Interoperability パッチのアンインストール終了
+
+REM Data Interoperability のアンインストール
+REM echo ArcGIS Pro 2.7 Data Interoperability のアンインストール開始
+REM %windir%\System32\msiexec.exe /X "{A9BD7866-71EE-4FCB-9AB8-FE03BEA78C32}" /norestart /passive /qb
+REM echo ArcGIS Pro 2.7 Data Interoperability アンインストール終了
 
 
 REM その他:ArcGIS Pro 2.3 用 ST_Geometry ライブラリ と ST_Raster ライブラリ
