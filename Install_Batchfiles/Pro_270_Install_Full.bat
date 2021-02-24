@@ -80,8 +80,7 @@ echo パッチのインストール終了
 REM Data Interoperability のインストール
 REM echo ArcGIS Pro 2.7 Data Interoperability のインストール
 REM %windir%\System32\msiexec.exe /I "%curpath%\ArcGISProDataInterop\DataInteropPro.msi" ALLUSERS=1 /norestart /passive /qb
-REM set dataInteropPath = "F:\ArcGIS"
-REM %windir%\System32\msiexec.exe /I "%curpath%\ArcGISProDataInterop\DataInteropPro.msi" INSTALLDIR=dataInteropPath /norestart /passive /qb
+REM %windir%\System32\msiexec.exe /I "%curpath%\ArcGISProDataInterop\DataInteropPro.msi" INSTALLDIR="F:\ArcGIS" /norestart /passive /qb
 
 REM echo ArcGIS Pro 2.7 Data Interoperability Patch 1 のインストール
 REM %windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_DI_Pro_271_177453.msp" /norestart /passive /qb
