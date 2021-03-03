@@ -45,6 +45,12 @@ echo ArcGIS Pro 2.6 日本語パック のアンインストール...
 %windir%\System32\msiexec.exe /X "{B89A3DB7-BF3B-48D0-A71F-FAC8036AAFA6}" /norestart /passive /qb
 
 
+REM Data Interoperability のアンインストール
+REM echo ArcGIS Pro 2.6 Data Interoperability のアンインストール開始
+REM %windir%\System32\msiexec.exe /X "{9F366C17-E615-4C55-85E9-F646C4A30A0B}" /norestart /passive /qb
+REM echo ArcGIS Pro 2.6 Data Interoperability アンインストール終了
+
+
 REM ArcGIS Pro 本体のアンインストール
 echo ArcGIS Pro 2.6 本体のアンインストール... アンインストールにはしばらく時間がかかります...
 %windir%\System32\msiexec.exe /X "{612674FE-4B64-4254-A9AD-C31568C89EA4}" /norestart /passive /qb

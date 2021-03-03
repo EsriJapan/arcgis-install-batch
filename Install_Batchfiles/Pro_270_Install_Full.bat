@@ -93,6 +93,8 @@ echo 注1)ArcGIS Pro 2.7 用 ST_Geometry ライブラリ と ST_Raster ライブラリ は必要
 echo 注2)日本用地図シンボル は必要に応じてインストールしてください
 
 
+GOTO EXITEND
+
 :NETNG
 echo 事前条件の .NET Framework 4.8 を確認できないため、インストールを継続できません。
 GOTO EXITEND
