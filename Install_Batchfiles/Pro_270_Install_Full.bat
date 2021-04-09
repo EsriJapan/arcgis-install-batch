@@ -70,8 +70,11 @@ REM パッチのインストール
 echo パッチのインストール開始
 
 
-echo ArcGIS Pro 2.7 Patch 1 のインストール 
-%windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_271_176643.msp" /norestart /passive /qb
+REM echo ArcGIS Pro 2.7 Patch 1 のインストール 
+REM %windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_271_176643.msp" /norestart /passive /qb
+
+echo ArcGIS Pro 2.7 Patch 2 のインストール 
+%windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_271_176644.msp" /norestart /passive /qb
 
 
 echo パッチのインストール終了

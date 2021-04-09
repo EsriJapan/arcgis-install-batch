@@ -25,6 +25,9 @@ echo ArcGIS Pro 2.7 のアンインストールを開始します
 REM パッチのアンインストール
 echo パッチのアンインストール開始
 
+echo ArcGIS Pro 2.7 Patch 2 のアンインストール
+%windir%\System32\msiexec.exe /I "{FBBB144A-B4BE-49A0-95C4-1007E3A42FA5}" MSIPATCHREMOVE="{A8BFD54D-B924-4C32-B2A6-42ED230F29A9}" /norestart /passive /qb
+
 echo ArcGIS Pro 2.7 Patch 1 のアンインストール
 %windir%\System32\msiexec.exe /I "{FBBB144A-B4BE-49A0-95C4-1007E3A42FA5}" MSIPATCHREMOVE="{2F94FC7D-896F-45E4-B25B-22570E0357A9}" /norestart /passive /qb
 
