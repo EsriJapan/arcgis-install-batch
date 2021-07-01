@@ -25,6 +25,9 @@ echo ArcGIS Pro 2.6 のアンインストールを開始します
 REM パッチのアンインストール
 echo パッチのアンインストール開始
 
+echo ArcGIS Pro 2.6 Patch 6 のアンインストール
+%windir%\System32\msiexec.exe /I "{612674FE-4B64-4254-A9AD-C31568C89EA4}" MSIPATCHREMOVE="{16D2D009-702B-4C5F-AF05-98D631B32B69}" /norestart /passive /qb
+
 echo ArcGIS Pro 2.6 Patch 4 のアンインストール
 %windir%\System32\msiexec.exe /I "{612674FE-4B64-4254-A9AD-C31568C89EA4}" MSIPATCHREMOVE="{DB475E00-FBD7-4F14-B392-063431075902}" /norestart /passive /qb
 
@@ -32,7 +35,7 @@ echo ArcGIS Pro 2.6 Patch 1 のアンインストール
 %windir%\System32\msiexec.exe /I "{612674FE-4B64-4254-A9AD-C31568C89EA4}" MSIPATCHREMOVE="{3FDA2C23-0644-48C3-BAE2-6083CC6A8E07}" /norestart /passive /qb
 
 echo パッチのアンインストール終了
-
+echo. 
 
 
 REM ArcGIS Helpアンインストール
@@ -46,10 +49,10 @@ echo ArcGIS Pro 2.6 日本語パック のアンインストール...
 
 
 REM Data Interoperability のアンインストール
-REM echo ArcGIS Pro 2.6 Data Interoperability のアンインストール開始
+REM echo ArcGIS Pro 2.6 Data Interoperability のアンインストール...
 REM %windir%\System32\msiexec.exe /X "{9F366C17-E615-4C55-85E9-F646C4A30A0B}" /norestart /passive /qb
 REM echo ArcGIS Pro 2.6 Data Interoperability アンインストール終了
-
+REM echo.
 
 REM ArcGIS Pro 本体のアンインストール
 echo ArcGIS Pro 2.6 本体のアンインストール... アンインストールにはしばらく時間がかかります...
@@ -57,7 +60,7 @@ echo ArcGIS Pro 2.6 本体のアンインストール... アンインストールにはしばらく時間が
 
 
 echo ArcGIS Pro 2.6 のアンインストール終了
-
+echo. 
 
 REM その他:ArcGIS Pro 2.3 用 ST_Geometry ライブラリ と ST_Raster ライブラリ
 REM その他:日本用地図シンボル

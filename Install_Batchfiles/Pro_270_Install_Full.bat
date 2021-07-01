@@ -45,8 +45,8 @@ IF %NETVAL% geq %COMPNET% (
 )
 
 :NETOK
-REM echo .NET Framework 4.8 を確認しました。インストール可能です。
-
+echo .NET Framework 4.8 を確認しました。インストール可能です。
+echo. 
 
 REM ArcGIS Pro 本体のインストール
 echo ArcGIS Pro 2.7 本体のインストール... インストールにはしばらく時間がかかります...
@@ -63,7 +63,7 @@ echo ArcGIS Pro オフライン ヘルプ のインストール...
 
 
 echo ArcGIS Pro 2.7 のインストール終了
-
+echo. 
 
 
 REM パッチのインストール
@@ -73,21 +73,33 @@ echo パッチのインストール開始
 REM echo ArcGIS Pro 2.7 Patch 1 のインストール 
 REM %windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_271_176643.msp" /norestart /passive /qb
 
-echo ArcGIS Pro 2.7 Patch 2 のインストール 
-%windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_271_176644.msp" /norestart /passive /qb
+REM echo ArcGIS Pro 2.7 Patch 2 のインストール 
+REM %windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_272_176644.msp" /norestart /passive /qb
 
+REM echo ArcGIS Pro 2.7 Patch 3 のインストール 
+REM %windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_273_177550.msp" /norestart /passive /qb
+
+echo ArcGIS Pro 2.7 Patch 4 のインストール 
+%windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_274_177591.msp" /norestart /passive /qb
 
 echo パッチのインストール終了
+echo. 
 
+REM ArcGIS Coordinate Systems Data のインストール
+echo ArcGIS Coordinate Systems Data のインストール...
+%windir%\System32\msiexec.exe /I "%curpath%\CoordinateSystemsData\SetupFiles\CSD.msi" /norestart /passive /qb
+echo ArcGIS Coordinate Systems Data のインストール終了
+echo.
 
 REM Data Interoperability のインストール
-REM echo ArcGIS Pro 2.7 Data Interoperability のインストール
+REM echo ArcGIS Pro 2.7 Data Interoperability のインストール...
 REM %windir%\System32\msiexec.exe /I "%curpath%\ArcGISProDataInterop\DataInteropPro.msi" ALLUSERS=1 /norestart /passive /qb
-REM %windir%\System32\msiexec.exe /I "%curpath%\ArcGISProDataInterop\DataInteropPro.msi" INSTALLDIR="F:\ArcGIS" /norestart /passive /qb
+
 
 REM echo ArcGIS Pro 2.7 Data Interoperability Patch 1 のインストール
 REM %windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_DI_Pro_271_177453.msp" /norestart /passive /qb
 REM echo ArcGIS Pro 2.7 Data Interoperability と Patch 1 のインストール終了
+REM echo. 
 
 
 REM その他:ArcGIS Pro 2.0 用 ST_Geometry ライブラリ と ST_Raster ライブラリ

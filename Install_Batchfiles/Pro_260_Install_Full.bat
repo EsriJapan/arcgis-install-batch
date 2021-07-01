@@ -45,8 +45,8 @@ IF %NETVAL% geq %COMPNET% (
 )
 
 :NETOK
-REM echo .NET Framework 4.8 を確認しました。インストール可能です。
-
+echo .NET Framework 4.8 を確認しました。インストール可能です。
+echo. 
 
 REM ArcGIS Pro 本体のインストール
 echo ArcGIS Pro 2.6 本体のインストール... インストールにはしばらく時間がかかります...
@@ -63,7 +63,7 @@ echo ArcGIS Pro オフライン ヘルプ のインストール...
 
 
 echo ArcGIS Pro 2.6 のインストール終了
-
+echo. 
 
 
 REM パッチのインストール
@@ -72,23 +72,29 @@ echo パッチのインストール開始
 
 REM echo ArcGIS Pro 2.6 Patch 1 のインストール 
 REM %windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_261_175064.msp" /norestart /passive /qb
-echo ArcGIS Pro 2.6 Patch 4 のインストール 
-%windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_264_176708.msp" /norestart /passive /qb
+REM echo ArcGIS Pro 2.6 Patch 4 のインストール 
+REM %windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_264_176708.msp" /norestart /passive /qb
+echo ArcGIS Pro 2.6 Patch 6 のインストール 
+%windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_266_178555.msp" /norestart /passive /qb
+
 
 echo パッチのインストール終了
+echo. 
+
 
 REM Data Interoperability のインストール
-REM echo ArcGIS Pro 2.6 Data Interoperability のインストール
+REM echo ArcGIS Pro 2.6 Data Interoperability のインストール...
 REM %windir%\System32\msiexec.exe /I "%curpath%\ArcGISProDataInterop\DataInteropPro.msi" ALLUSERS=1 /norestart /passive /qb
-REM %windir%\System32\msiexec.exe /I "%curpath%\ArcGISProDataInterop\DataInteropPro.msi" INSTALLDIR="F:\ArcGIS" /norestart /passive /qb
 
 REM echo ArcGIS Pro 2.6 Data Interoperability のインストール終了
+REM echo. 
 
 
 REM その他:ArcGIS Pro 2.0 用 ST_Geometry ライブラリ と ST_Raster ライブラリ
 REM その他:日本用地図シンボルなどはバッチでは？
 echo 注1)ArcGIS Pro 2.6 用 ST_Geometry ライブラリ と ST_Raster ライブラリ は必要に応じてインストールしてください
 echo 注2)日本用地図シンボル は必要に応じてインストールしてください
+echo. 
 
 GOTO EXITEND
 
