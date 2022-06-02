@@ -35,7 +35,7 @@ echo -----------------------------------
 echo ・ArcGIS Pro
 echo ・ArcGIS Pro 2.9 Patch 1 （2.9.1）
 echo ・ArcGIS Pro オフライン ヘルプ
-REM echo ・ArcGIS Data Interoperability for Pro （英語）
+echo ・ArcGIS Data Interoperability for Pro （英語）
 echo ・ArcGIS Coordinate Systems Data （英語）
 echo.
 
@@ -48,6 +48,12 @@ echo ArcGIS Pro 2.9 のアンインストールを開始します
 
 REM パッチのアンインストール
 echo パッチのアンインストール開始
+
+echo ArcGIS Pro 2.9 Patch 3 のアンインストール
+%windir%\System32\msiexec.exe /I "{AD53732E-507C-4A7F-B451-BE7EA01D0832}" MSIPATCHREMOVE="{CDDA22A8-D5DF-4982-B783-19B278355F80}" /norestart /passive /qb
+
+echo ArcGIS Pro 2.9 Patch 2 のアンインストール
+%windir%\System32\msiexec.exe /I "{AD53732E-507C-4A7F-B451-BE7EA01D0832}" MSIPATCHREMOVE="{8FF072BC-F7E1-480F-AD9F-E2BEDB8F5915}" /norestart /passive /qb
 
 echo ArcGIS Pro 2.9 Patch 1 のアンインストール
 %windir%\System32\msiexec.exe /I "{AD53732E-507C-4A7F-B451-BE7EA01D0832}" MSIPATCHREMOVE="{76931031-95B2-4B36-901B-E28CB333B35C}" /norestart /passive /qb
@@ -70,6 +76,12 @@ echo ArcGIS Coordinate Systems Data のアンインストール...
 %windir%\System32\msiexec.exe /X "{BB1535B4-319D-4278-8260-D62B278AFCDE}" /norestart /passive /qb
 echo ArcGIS Coordinate Systems Data アンインストール終了
 echo.
+
+REM Data Interoperability パッチのアンインストール
+REM echo ArcGIS Pro 2.9 Data Interoperability Patch 1 のアンインストール
+REM %windir%\System32\msiexec.exe /I "{DE8B6635-C3F9-4566-B0C9-F0A90C17E5A1}" MSIPATCHREMOVE="{97790B11-AA7F-408D-9732-C62F2A0A9FD9}" /norestart /passive /qb
+REM echo ArcGIS Pro 2.9 Data Interoperability Patch 1 のアンインストール終了
+REM echo.
 
 REM Data Interoperability のアンインストール
 REM echo ArcGIS Pro 2.9 Data Interoperability のアンインストール...

@@ -41,7 +41,7 @@ echo -----------------------------------
 echo ・ArcGIS Pro
 echo ・ArcGIS Pro 2.9 Patch 1 （2.9.1）
 echo ・ArcGIS Pro オフライン ヘルプ
-REM echo ・ArcGIS Data Interoperability for Pro （英語）
+echo ・ArcGIS Data Interoperability for Pro （英語）
 echo ・ArcGIS Coordinate Systems Data （英語）
 echo.
 
@@ -103,9 +103,14 @@ echo.
 REM パッチのインストール
 echo パッチのインストール開始
 
-echo ArcGIS Pro 2.9 Patch 1 のインストール...
-%windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_291_179945.msp" /norestart /passive /qb
+REM echo ArcGIS Pro 2.9 Patch 1 のインストール...
+REM %windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_291_179945.msp" /norestart /passive /qb
 
+REM echo ArcGIS Pro 2.9 Patch 2 のインストール...
+REM %windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_292_179946.msp" /norestart /passive /qb
+
+echo ArcGIS Pro 2.9 Patch 3 のインストール...
+%windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_293_179947.msp" /norestart /passive /qb
 
 echo パッチのインストール終了
 echo.
@@ -124,7 +129,14 @@ REM %windir%\System32\msiexec.exe /I "%curpath%\ArcGISProDataInterop\DataInterop
 REM echo ArcGIS Pro 2.9 Data Interoperability のインストール終了
 REM echo.
 
+REM Data Interoperability パッチのインストール
+REM echo Data Interoperability パッチのインストール開始
 
+REM echo ArcGIS Pro 2.9 Data Interoperability Patch 1 のインストール...
+REM %windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_DI_Pro_291_181500.msp" /norestart /passive /qb
+
+REM echo Data Interoperability パッチのインストール終了
+REM echo.
 
 REM その他:ArcGIS Pro 用 ST_Geometry ライブラリ や ODBC Driverなどは必要に応じて
 REM その他:日本用地図シンボルなど
