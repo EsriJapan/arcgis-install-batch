@@ -35,7 +35,7 @@ REM   HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\dotnet\Setup\InstalledVersions\x64
 REM   5.0.x REG_DWORD ’l 1
 REM   6.0.x REG_DWORD ’l 1 (x >= 5 : Pro ‚Í6.0.5 ˆÈã‚ª•K—v)
 REM 
-REM ŽQlF .NET SDK ‚ðƒCƒ“ƒXƒg[ƒ‹‚µ‚Ä‚¢‚éŠÂ‹«‚Å‚ ‚ê‚ÎAdotnet --list-runtimes ‚Åƒ‰ƒ“ƒ^ƒCƒ€‚Ìˆê——‚ðŽæ“¾‚µ‚Äƒ`ƒFƒbƒN‚·‚é•û–@REM ŽQlF dotnet --list-runtimes ‚Åƒ‰ƒ“ƒ^ƒCƒ€‚Ìˆê——‚ðŽæ“¾‚µ‚Äƒ`ƒFƒbƒN‚·‚é•û–@
+REM ŽQlF .NET SDK ‚ðƒCƒ“ƒXƒg[ƒ‹‚µ‚Ä‚¢‚éŠÂ‹«‚Å‚ ‚ê‚ÎAdotnet --list-runtimes ‚Åƒ‰ƒ“ƒ^ƒCƒ€‚Ìˆê——‚ðŽæ“¾‚µ‚Äƒ`ƒFƒbƒN‚·‚é•û–@‚ð—˜—p‰Â”\
 REM   >dotnet --list-runtimes
 REM   Microsoft.AspNetCore.All 2.1.28 [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.All]
 REM   `È—ª`
@@ -116,7 +116,7 @@ REM   ’ˆÓŽ–€Fƒoƒbƒ`ƒtƒ@ƒCƒ‹‚Ìfor•¶‚Ì’†‚Å•Ï”‚ð‘€ì‚µ‚Ä‚àŠú‘Ò‚µ‚½‹““®‚É‚È‚ç‚È‚
 REM     ŽQlFhttp://dalmore.blog7.fc2.com/blog-entry-79.html
 REM 
 REM setlocal enabledelayedexpansion
-REM set VERSION=6
+REM set FULLVERSION=605
 REM set CHECK_DR=FALSE
 REM FOR /F "tokens=2,4,5,6,* delims=. " %%I IN ('dotnet --list-runtimes') DO (
 REM   REM Šm”F—p
@@ -125,11 +125,11 @@ REM   REM   AspNetCore 5 0 6
 REM   REM   NETCore 6 0 8
 REM   REM   WindowsDesktop 5 0 6
 REM   REM                        “™‚Æo—Í‚³‚ê‚é‚Í‚¸
-REM   IF "%%I"=="WindowsDesktop" (
-REM      SET NETDRVAL=%%J
-REM      REM Šm”F—p
-REM      REM echo %VERSION% !NETDRVAL!
-REM      IF %VERSION% equ !NETDRVAL! SET CHECK_DR=TRUE
+REM   IF "%%I%%J"=="WindowsDesktop6" (
+REM     SET /A FULLNETDRVAL=%%J%%K%%L
+REM     REM Šm”F—p
+REM     REM echo !FULLNETDRVAL! ^>^= %FULLVERSION%
+REM     IF !FULLNETDRVAL! geq %FULLVERSION% SET CHECK_DR=TRUE
 REM   )
 REM )
 
@@ -139,17 +139,19 @@ REM   5.0.x REG_DWORD ’l 1
 REM   6.0.x REG_DWORD ’l 1 (x >= 5 : Pro ‚Í6.0.5 ˆÈã‚ª•K—v)
 REM 
 setlocal enabledelayedexpansion
-set VERSION=6
-set BVERSION=5
+set FULLVERSION=605
 set CHECK_DR=FALSE
 FOR /F "tokens=1,2,3,* delims=. " %%I IN ('reg query "HKLM\SOFTWARE\WOW6432Node\dotnet\Setup\InstalledVersions\x64\sharedfx\Microsoft.WindowsDesktop.App" /t "REG_DWORD"') DO (
   REM Šm”F—p
   REM echo %%I %%J %%K %%L
-  SET NETDRVAL=%%I
-  SET BNETDRVAL=%%K
+  REM 5 0 6 REG_DWORD 0x1
+  REM 6 0 8 REG_DWORD 0x1 ‚Æ•\Ž¦‚³‚ê‚é
+  SET /A FULLNETDRVAL=%%I%%J%%K
   REM Microsoft.WindowsDesktop.App 6.0.5 ˆÈã‚ªƒCƒ“ƒXƒg[ƒ‹‚³‚ê‚Ä‚¢‚éê‡
-  IF %VERSION% equ !NETDRVAL! (
-    IF !BNETDRVAL! geq %BVERSION% SET CHECK_DR=TRUE
+  IF !FULLNETDRVAL! geq %FULLVERSION% (
+    REM Šm”F—p
+    REM echo !FULLNETDRVAL! ^>^= %FULLVERSION%
+    SET CHECK_DR=TRUE
   )
 )
 
@@ -160,6 +162,8 @@ IF %CHECK_DR%==TRUE (
   REM echo .NET 6 Desktop Runtime x64 ‚ªŒ©“–‚½‚è‚Ü‚¹‚ñBÅ‰‚ÉƒCƒ“ƒXƒg[ƒ‹‚µ‚Ä‚­‚¾‚³‚¢B
   GOTO NETDRNG
 )
+
+endlocal
 
 :NETDROK
 echo .NET 6 Desktop Runtime x64 ‚ðŠm”F‚µ‚Ü‚µ‚½BƒCƒ“ƒXƒg[ƒ‹‰Â”\‚Å‚·B
