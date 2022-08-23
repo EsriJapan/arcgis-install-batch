@@ -116,7 +116,7 @@ REM   íçà”éñçÄÅFÉoÉbÉ`ÉtÉ@ÉCÉãÇÃforï∂ÇÃíÜÇ≈ïœêîÇëÄçÏÇµÇƒÇ‡ä˙ë“ÇµÇΩãììÆÇ…Ç»ÇÁÇ»Ç
 REM     éQçlÅFhttp://dalmore.blog7.fc2.com/blog-entry-79.html
 REM 
 REM setlocal enabledelayedexpansion
-REM set FULLVERSION=605
+REM set /A FULLVERSION=605
 REM set CHECK_DR=FALSE
 REM FOR /F "tokens=2,4,5,6,* delims=. " %%I IN ('dotnet --list-runtimes') DO (
 REM   REM ämîFóp
@@ -139,7 +139,7 @@ REM   5.0.x REG_DWORD íl 1
 REM   6.0.x REG_DWORD íl 1 (x >= 5 : Pro ÇÕ6.0.5 à»è„Ç™ïKóv)
 REM 
 setlocal enabledelayedexpansion
-set FULLVERSION=605
+set /A FULLVERSION=605
 set CHECK_DR=FALSE
 FOR /F "tokens=1,2,3,* delims=. " %%I IN ('reg query "HKLM\SOFTWARE\WOW6432Node\dotnet\Setup\InstalledVersions\x64\sharedfx\Microsoft.WindowsDesktop.App" /t "REG_DWORD"') DO (
   REM ämîFóp
