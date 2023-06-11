@@ -78,7 +78,8 @@ echo -----------------------------------
 echo ArcGIS Pro 3.1 の一括インストール の対象
 echo -----------------------------------
 echo ・ArcGIS Pro
-echo ・ArcGIS Pro 3.1 Patch 1 （3.1.1）
+REM echo ・ArcGIS Pro 3.1 Patch 1 （3.1.1）
+echo ・ArcGIS Pro 3.1 Patch 2 （3.1.2）
 echo ・ArcGIS Pro オフライン ヘルプ
 echo ・ArcGIS Data Interoperability for Pro （英語）
 echo ・ArcGIS Coordinate Systems Data （英語）
@@ -194,8 +195,11 @@ echo.
 REM パッチのインストール
 echo パッチのインストール開始
 
-echo ArcGIS Pro 3.1 Patch 1 のインストール...
-%windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_311_185017.msp" /norestart /passive /qb
+REM echo ArcGIS Pro 3.1 Patch 1 のインストール...
+REM %windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_311_185017.msp" /norestart /passive /qb
+
+echo ArcGIS Pro 3.1 Patch 2 のインストール...
+%windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_312_185016.msp" /norestart /passive /qb
 
 echo パッチのインストール終了
 echo.

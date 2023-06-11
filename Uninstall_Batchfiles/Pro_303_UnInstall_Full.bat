@@ -33,6 +33,7 @@ echo -----------------------------------
 echo ArcGIS Pro 3.03 の一括アンアンインストール の対象
 echo -----------------------------------
 echo ・ArcGIS Pro
+echo ・ArcGIS Pro 3.0 Patch 5 （3.0.5）
 echo ・ArcGIS Pro 3.0 Patch 4 （3.0.4）
 echo ・ArcGIS Pro オフライン ヘルプ
 echo ・ArcGIS Data Interoperability for Pro （英語）
@@ -48,6 +49,9 @@ echo ArcGIS Pro 3.03 のアンインストールを開始します
 
 REM パッチのアンインストール
 echo パッチのアンインストール開始
+
+echo ArcGIS Pro 3.0 Patch 5 のアンインストール
+%windir%\System32\msiexec.exe /I "{690B606E-8A38-4CB9-B088-241F60A86072}" MSIPATCHREMOVE="{403EA9FB-5C29-4EB8-BDA2-702D71AB1F92}" /norestart /passive /qb
 
 echo ArcGIS Pro 3.0 Patch 4 のアンインストール
 %windir%\System32\msiexec.exe /I "{690B606E-8A38-4CB9-B088-241F60A86072}" MSIPATCHREMOVE="{C7381E1E-48E6-47D4-9071-13B46A7F91BC}" /norestart /passive /qb

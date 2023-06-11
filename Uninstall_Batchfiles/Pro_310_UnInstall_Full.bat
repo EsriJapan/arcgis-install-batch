@@ -33,6 +33,7 @@ echo -----------------------------------
 echo ArcGIS Pro 3.1 の一括アンアンインストール の対象
 echo -----------------------------------
 echo ・ArcGIS Pro
+echo ・ArcGIS Pro 3.1 Patch 2 （3.1.2）
 echo ・ArcGIS Pro 3.1 Patch 1 （3.1.1）
 echo ・ArcGIS Pro オフライン ヘルプ
 echo ・ArcGIS Data Interoperability for Pro （英語）
@@ -48,6 +49,9 @@ echo ArcGIS Pro 3.1 のアンインストールを開始します
 
 REM パッチのアンインストール
 echo パッチのアンインストール開始
+
+echo ArcGIS Pro 3.1 Patch 2 のアンインストール
+%windir%\System32\msiexec.exe /I "{A61AD307-865F-429F-B2A3-5618BD333F7E}" MSIPATCHREMOVE="{F9AA4027-F2BC-41B9-8EBD-86F20AD15654}" /norestart /passive /qb
 
 echo ArcGIS Pro 3.1 Patch 1 のアンインストール
 %windir%\System32\msiexec.exe /I "{A61AD307-865F-429F-B2A3-5618BD333F7E}" MSIPATCHREMOVE="{71D98C4E-6A5B-4A9A-B637-D34D9284757E}" /norestart /passive /qb

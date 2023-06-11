@@ -78,7 +78,8 @@ echo -----------------------------------
 echo ArcGIS Pro 3.03 の一括インストール の対象
 echo -----------------------------------
 echo ・ArcGIS Pro
-echo ・ArcGIS Pro 3.0 Patch 4 （3.0.4）
+REM echo ・ArcGIS Pro 3.0 Patch 4 （3.0.4）
+echo ・ArcGIS Pro 3.0 Patch 5 （3.0.5）
 echo ・ArcGIS Pro オフライン ヘルプ
 echo ・ArcGIS Data Interoperability for Pro （英語）
 echo ・ArcGIS Coordinate Systems Data （英語）
@@ -194,8 +195,11 @@ echo.
 REM パッチのインストール
 echo パッチのインストール開始
 
-echo ArcGIS Pro 3.03 Patch 4 のインストール...
-%windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_304_182229.msp" /norestart /passive /qb
+REM echo ArcGIS Pro 3.03 Patch 4 のインストール...
+REM %windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_304_182229.msp" /norestart /passive /qb
+
+echo ArcGIS Pro 3.03 Patch 5 のインストール...
+%windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_305_182228.msp" /norestart /passive /qb
 
 echo パッチのインストール終了
 echo.
