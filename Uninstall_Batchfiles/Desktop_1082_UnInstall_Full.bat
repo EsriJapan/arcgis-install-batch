@@ -40,13 +40,21 @@ echo パッチのアンインストール開始
 echo 01_ArcGIS Desktop 10.8.2 Enhanced Compression Wavelet (ECW) Support Patch のアンインストール
 %windir%\System32\msiexec.exe /I "{791AB03F-1AF2-43FE-8F5D-8FDC9509D7CF}" MSIPATCHREMOVE="{F1616A19-F581-4CDC-B75D-38BD017BA5AA}" /norestart /passive /qb
 
+echo 02_ArcGIS Desktop 10.8.2 Spatial Analyst Slope Tool Patch のアンインストール
+%windir%\System32\msiexec.exe /I "{791AB03F-1AF2-43FE-8F5D-8FDC9509D7CF}" MSIPATCHREMOVE="{807AB572-2592-4592-8B01-7C9191D8E71C}" /norestart /passive /qb
+
+echo 03_ArcGIS Desktop 10.8.2 Java Component Updates Patch のアンインストール
+%windir%\System32\msiexec.exe /I "{791AB03F-1AF2-43FE-8F5D-8FDC9509D7CF}" MSIPATCHREMOVE="{1E3FEFDC-F753-4819-B5EA-D8D405CC2E34}" /norestart /passive /qb
+
+echo 04_ArcGIS (Desktop, Engine) 10.8.2 General Component Updates Patch のアンインストール
+%windir%\System32\msiexec.exe /I "{791AB03F-1AF2-43FE-8F5D-8FDC9509D7CF}" MSIPATCHREMOVE="{827EF3A3-B1AE-475D-9973-9969556D4932}" /norestart /passive /qb
+
 
 REM 64-bit OSの場合はバックグラウンドパッチ適用
 IF NOT EXIST "%ProgramFiles(x86)%" GOTO 64BITPatchesEnd
 
-REM 2022/02/xx リリース時点なし
-REM echo 01_xxx Patch 64-bit
-REM %windir%\System32\msiexec.exe /I "{}" MSIPATCHREMOVE="{}" /norestart /passive /qb
+echo 01_ArcGIS (Desktop, Engine) 10.8.2 General Component Updates Patch 64-bit のアンインストール
+%windir%\System32\msiexec.exe /I "{DE0069B6-F646-49BB-82EC-8E29F5CE8937}" MSIPATCHREMOVE="{427153BC-5DC9-4C3E-9D8E-CA84E1EE127E}" /norestart /passive /qb
 
 
 :64BITPatchesEnd

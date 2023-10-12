@@ -110,7 +110,8 @@ echo Microsoft Visual C++ 2015-2019 再配布可能(x86)パッケージ のインストール...
 REM ArcGIS Desktop本体のインストール
 echo ArcGIS Desktop 10.8.2 のインストール... インストールにはしばらく時間がかかります...
 REM Install ArcGIS Desktop 10.8.2
-%windir%\System32\msiexec.exe /I "%curpath%\Desktop_Japanese\SetupFiles\setup.msi" /norestart /passive /qb
+REM 2023/10/12 - EULA (エンド ユーザー使用許諾契約書) への同意を追加
+%windir%\System32\msiexec.exe /I "%curpath%\Desktop_Japanese\SetupFiles\setup.msi" ACCEPTEULA=YES /norestart /passive /qb
 
 REM 日本語パックのインストール
 echo ArcGIS Desktop 10.8.2 日本語パック のインストール...
@@ -165,19 +166,35 @@ echo パッチのインストール開始
 echo 01_ArcGIS Desktop 10.8.2 Enhanced Compression Wavelet (ECW) Support Patch
 %windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1082-DT-ECW-Patch.msp" /norestart /passive /qb
 
+REM 2022/7/22 公開のパッチ
+echo 02_ArcGIS Desktop 10.8.2 Spatial Analyst Slope Tool Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1082-DT-SAST-Patch.msp" /norestart /passive /qb
+
+REM 2023/8/30 公開のパッチ
+echo 03_ArcGIS Desktop 10.8.2 Java Component Updates Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1082-DT-JCU-Patch.msp" /norestart /passive /qb
+
+REM 2023/8/30 公開のパッチ
+echo 04_ArcGIS (Desktop, Engine) 10.8.2 General Component Updates Patch
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1082-DT-GCU-Patch.msp" /norestart /passive /qb
+
 
 REM 64-bit OSの場合はバックグラウンドパッチ適用
 IF NOT EXIST "%ProgramFiles(x86)%" GOTO 64BITPatchesEnd
 
-REM 2022/02/xx リリース時点なし
-REM echo 01_xxxx
-REM %windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\xxxxx.msp" /norestart /passive /qb
+REM 2023/8/30 公開のパッチ
+echo 01_ArcGIS (Desktop, Engine) 10.8.2 General Component Updates Patch 64-bit
+%windir%\System32\msiexec.exe /p "%curpath%\Desktop_Patches\ArcGIS-1082-BGDT-GCU-Patch.msp" /norestart /passive /qb
 
 echo 
 
 :64BITPatchesEnd
 
 echo パッチのインストール終了
+echo 
+echo "その他のパッチや最新のパッチは ArcGIS Desktop Patch Notification を起動して確認するか、"
+echo "もしくは https://support.esri.com/ja-jp/patches-updates から確認してください"
+echo 
 GOTO EXITEND
 
 :GETVESIONERROR
