@@ -17,11 +17,14 @@ REM
 REM 
 REM バッチファイルに含めているプロダクト
 REM 
-REM バッチファイルに含めてプロダクトは Pro_300_Install_Full.bat に含めている次のものです。
+REM バッチファイルに含めてプロダクトは Pro_310_Install_Full.bat に含めている次のものです。
 REM 
 REM ---プロダクト コンポーネント---
 REM ArcGIS Pro
-REM ArcGIS Pro 3.0 Patch 1 （3.0.1）
+REM ArcGIS Pro 3.1 Patch 1 （3.1.1）
+REM ArcGIS Pro 3.1 Patch 2 （3.1.2）
+REM ArcGIS Pro 3.1 Patch 3 （3.1.3）
+REM ArcGIS Pro 3.1 Patch 4 （3.1.4）
 REM ArcGIS Pro オフライン ヘルプ
 REM ArcGIS Data Interoperability for Pro （英語）
 REM ---データとコンテンツ---
@@ -33,10 +36,12 @@ echo -----------------------------------
 echo ArcGIS Pro 3.1 の一括アンアンインストール の対象
 echo -----------------------------------
 echo ・ArcGIS Pro
+echo ・ArcGIS Pro 3.1 Patch 4 （3.1.4）
+echo ・ArcGIS Pro 3.1 Patch 3 （3.1.3）
 echo ・ArcGIS Pro 3.1 Patch 2 （3.1.2）
 echo ・ArcGIS Pro 3.1 Patch 1 （3.1.1）
 echo ・ArcGIS Pro オフライン ヘルプ
-echo ・ArcGIS Data Interoperability for Pro （英語）
+REM echo ・ArcGIS Data Interoperability for Pro （英語）
 echo ・ArcGIS Coordinate Systems Data （英語）
 echo.
 
@@ -49,6 +54,12 @@ echo ArcGIS Pro 3.1 のアンインストールを開始します
 
 REM パッチのアンインストール
 echo パッチのアンインストール開始
+
+echo ArcGIS Pro 3.1 Patch 4 のアンインストール
+%windir%\System32\msiexec.exe /I "{A61AD307-865F-429F-B2A3-5618BD333F7E}" MSIPATCHREMOVE="{A5BD739B-82EF-4639-AF9A-ECA8CD94D04F}" /norestart /passive /qb
+
+echo ArcGIS Pro 3.1 Patch 3 のアンインストール
+%windir%\System32\msiexec.exe /I "{A61AD307-865F-429F-B2A3-5618BD333F7E}" MSIPATCHREMOVE="{B7B84ECD-4C8C-4B4A-BD37-B74B1AAB6751}" /norestart /passive /qb
 
 echo ArcGIS Pro 3.1 Patch 2 のアンインストール
 %windir%\System32\msiexec.exe /I "{A61AD307-865F-429F-B2A3-5618BD333F7E}" MSIPATCHREMOVE="{F9AA4027-F2BC-41B9-8EBD-86F20AD15654}" /norestart /passive /qb
@@ -78,10 +89,10 @@ echo ArcGIS Coordinate Systems Data アンインストール終了
 echo.
 
 REM Data Interoperability のアンインストール
-echo ArcGIS Pro 3.1 Data Interoperability のアンインストール...
-%windir%\System32\msiexec.exe /X "{D7189FF4-999B-4783-8B3D-01B900BFF16C}" /norestart /passive /qb
-echo ArcGIS Pro 3.1 Data Interoperability アンインストール終了
-echo.
+REM echo ArcGIS Pro 3.1 Data Interoperability のアンインストール...
+REM %windir%\System32\msiexec.exe /X "{D7189FF4-999B-4783-8B3D-01B900BFF16C}" /norestart /passive /qb
+REM echo ArcGIS Pro 3.1 Data Interoperability アンインストール終了
+REM echo.
 
 REM ArcGIS Pro 本体のアンインストール
 echo ArcGIS Pro 3.1 本体のアンインストール... アンインストールにはしばらく時間がかかります...

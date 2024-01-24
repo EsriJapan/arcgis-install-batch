@@ -1,6 +1,6 @@
 @echo off
 REM ------------------------------
-REM ArcGIS Pro 3.1 の一括インストール
+REM ArcGIS Pro 3.2 の一括インストール
 REM ------------------------------
 
 REM 
@@ -61,11 +61,8 @@ REM
 REM バッチファイルに含めてプロダクトは My Esri からダウンロードする次のものです。
 REM 
 REM ---プロダクト コンポーネント---
-REM ArcGIS Pro 3.1
-REM ArcGIS Pro 3.1 Patch 1 （3.1.1）
-REM ArcGIS Pro 3.1 Patch 2 （3.1.2）
-REM ArcGIS Pro 3.1 Patch 3 （3.1.3）
-REM ArcGIS Pro 3.1 Patch 4 （3.1.4）
+REM ArcGIS Pro 3.2
+REM ArcGIS Pro 3.2 Patch 1 （3.2.1）
 REM ArcGIS Pro オフライン ヘルプ
 REM ArcGIS Data Interoperability for Pro （英語）
 REM ---データとコンテンツ---
@@ -78,13 +75,10 @@ REM
 
 echo.
 echo -----------------------------------
-echo ArcGIS Pro 3.1 の一括インストール の対象
+echo ArcGIS Pro 3.2 の一括インストール の対象
 echo -----------------------------------
 echo ・ArcGIS Pro
-REM echo ・ArcGIS Pro 3.1 Patch 1 （3.1.1）
-REM echo ・ArcGIS Pro 3.1 Patch 2 （3.1.2）
-REM echo ・ArcGIS Pro 3.1 Patch 3 （3.1.3）
-echo ・ArcGIS Pro 3.1 Patch 4 （3.1.4）
+echo ・ArcGIS Pro 3.2 Patch 1 （3.2.1）
 echo ・ArcGIS Pro オフライン ヘルプ
 REM echo ・ArcGIS Data Interoperability for Pro （英語）
 echo ・ArcGIS Coordinate Systems Data （英語）
@@ -97,7 +91,7 @@ set curpath=%~dp0
 
 
 REM デスクトップのインストール
-echo ArcGIS Pro 3.1 のインストールを開始します
+echo ArcGIS Pro 3.2 のインストールを開始します
 
 
 REM 事前に必要なものをインストールチェック
@@ -180,11 +174,11 @@ REM ArcGIS Pro 本体のインストール
 REM 2.8 からエンド ユーザー使用許諾契約書 (EULA)のACCEPTEULAが必須パラメータとして追加
 REM ArcGIS Proのサイレントインストール時のパラメータ詳細はインストールガイドに記載されています
 REM https://pro.arcgis.com/ja/pro-app/latest/get-started/arcgis-pro-installation-administration.htm
-echo ArcGIS Pro 3.1 本体のインストール... インストールにはしばらく時間がかかります...
+echo ArcGIS Pro 3.2 本体のインストール... インストールにはしばらく時間がかかります...
 %windir%\System32\msiexec.exe /I "%curpath%\ArcGISPro_Japanese\SetupFiles\ArcGISPro.msi" ALLUSERS=1 ACCEPTEULA=YES /norestart /passive /qb
 
 REM ArcGIS Pro 日本語パックのインストール
-echo ArcGIS Pro 3.1 日本語パック のインストール...
+echo ArcGIS Pro 3.2 日本語パック のインストール...
 %windir%\System32\msiexec.exe /I "%curpath%\ArcGISPro_Japanese\SetupFiles\Supplement\ProJapaneseLP.msi" /norestart /passive /qb
 
 
@@ -193,24 +187,16 @@ echo ArcGIS Pro オフライン ヘルプ のインストール...
 %windir%\System32\msiexec.exe /I "%curpath%\ArcGISProHelp_Japanese\ArcGISProHelp_Japanese.msi" /norestart /passive /qb
 
 
-echo ArcGIS Pro 3.1 のインストール終了
+echo ArcGIS Pro 3.2 のインストール終了
 echo.
 
 
 REM パッチのインストール
 echo パッチのインストール開始
 
-REM echo ArcGIS Pro 3.1 Patch 1 のインストール...
-REM %windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_311_185017.msp" /norestart /passive /qb
+echo ArcGIS Pro 3.2 Patch 1 のインストール...
+%windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_321_188069.msp" /norestart /passive /qb
 
-REM echo ArcGIS Pro 3.1 Patch 2 のインストール...
-REM %windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_312_185016.msp" /norestart /passive /qb
-
-REM echo ArcGIS Pro 3.1 Patch 3 のインストール...
-REM %windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_313_185015.msp" /norestart /passive /qb
-
-echo ArcGIS Pro 3.1 Patch 4 のインストール...
-%windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_314_185014.msp" /norestart /passive /qb
 
 echo パッチのインストール終了
 echo.
@@ -222,11 +208,11 @@ echo ArcGIS Coordinate Systems Data のインストール終了
 echo.
 
 REM Data Interoperability のインストール
-REM echo ArcGIS Pro 3.1 Data Interoperability のインストール...
+REM echo ArcGIS Pro 3.2 Data Interoperability のインストール...
 REM %windir%\System32\msiexec.exe /I "%curpath%\ArcGISProDataInterop\DataInteropPro.msi" ALLUSERS=1 /norestart /passive /qb
 REM %windir%\System32\msiexec.exe /I "%curpath%\ArcGISProDataInterop\DataInteropPro.msi" INSTALLDIR="F:\ArcGIS" /norestart /passive /qb
 
-REM echo ArcGIS Pro 3.1 Data Interoperability のインストール終了
+REM echo ArcGIS Pro 3.2 Data Interoperability のインストール終了
 REM echo.
 
 REM Data Interoperability パッチのインストール
@@ -239,7 +225,7 @@ REM echo.
 REM その他:ArcGIS Pro 用 ST_Geometry ライブラリ や ODBC Driverなどは必要に応じて
 REM その他:日本用地図シンボルなど
 echo.
-echo 注1)ArcGIS Pro 3.1 用 データベースサポートファイル は必要に応じてMy Esriから入手してインストールしてください
+echo 注1)ArcGIS Pro 3.2 用 データベースサポートファイル は必要に応じてMy Esriから入手してインストールしてください
 echo 注2)その他、変換ツール、日本用地図シンボル は必要に応じてArcGIS リソース集（https://doc.esrij.com/pro/get-started/setup/user/）を参照の上、インストールしてください
 echo.
 
