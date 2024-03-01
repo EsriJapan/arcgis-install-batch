@@ -63,6 +63,7 @@ REM
 REM ---プロダクト コンポーネント---
 REM ArcGIS Pro 3.2
 REM ArcGIS Pro 3.2 Patch 1 （3.2.1）
+REM ArcGIS Pro 3.2 Patch 2 （3.2.2）
 REM ArcGIS Pro オフライン ヘルプ
 REM ArcGIS Data Interoperability for Pro （英語）
 REM ---データとコンテンツ---
@@ -78,9 +79,10 @@ echo -----------------------------------
 echo ArcGIS Pro 3.2 の一括インストール の対象
 echo -----------------------------------
 echo ・ArcGIS Pro
-echo ・ArcGIS Pro 3.2 Patch 1 （3.2.1）
+REM echo ・ArcGIS Pro 3.2 Patch 1 （3.2.1）
+echo ・ArcGIS Pro 3.2 Patch 2 （3.2.2）
 echo ・ArcGIS Pro オフライン ヘルプ
-REM echo ・ArcGIS Data Interoperability for Pro （英語）
+echo ・ArcGIS Data Interoperability for Pro （英語）
 echo ・ArcGIS Coordinate Systems Data （英語）
 echo.
 
@@ -194,9 +196,11 @@ echo.
 REM パッチのインストール
 echo パッチのインストール開始
 
-echo ArcGIS Pro 3.2 Patch 1 のインストール...
-%windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_321_188069.msp" /norestart /passive /qb
+REM echo ArcGIS Pro 3.2 Patch 1 のインストール...
+REM %windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_321_188069.msp" /norestart /passive /qb
 
+echo ArcGIS Pro 3.2 Patch 2 のインストール...
+%windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_322_188070.msp" /norestart /passive /qb
 
 echo パッチのインストール終了
 echo.
