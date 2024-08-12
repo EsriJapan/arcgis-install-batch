@@ -151,9 +151,16 @@ set CHECK_DR=FALSE
 FOR /F "tokens=1,2,3,* delims=. " %%I IN ('reg query "HKLM\SOFTWARE\WOW6432Node\dotnet\Setup\InstalledVersions\x64\sharedfx\Microsoft.WindowsDesktop.App" /t "REG_DWORD"') DO (
   REM 確認用
   REM echo %%I %%J %%K %%L
-  REM 5 0 6 REG_DWORD 0x1
   REM 6 0 8 REG_DWORD 0x1 と表示される
-  SET /A FULLNETDRVAL=%%I%%J%%K
+  REM 6 0 25 REG_DWORD 0x1 と表示される
+  REM 2024.8.2 - %%K が2桁の場合は判定が正しくないので、4桁目を除外するように変更
+  REM SET /A FULLNETDRVAL=%%I%%J%%K
+  SET M=%%K
+  SET N=!M:~0,1!
+  REM 確認用
+  REM echo !M!
+  REM echo !N!
+  SET /A FULLNETDRVAL=%%I%%J!N!
   REM Microsoft.WindowsDesktop.App 8.0.0 以上がインストールされている場合
   IF !FULLNETDRVAL! geq %FULLVERSION% (
     REM 確認用
@@ -163,17 +170,17 @@ FOR /F "tokens=1,2,3,* delims=. " %%I IN ('reg query "HKLM\SOFTWARE\WOW6432Node\
 )
 
 IF %CHECK_DR%==TRUE (
-  REM echo .NET 6 Desktop Runtime x64 を確認しました。インストール可能です。
+  REM echo .NET 8 Desktop Runtime x64 を確認しました。インストール可能です。
   GOTO NETDROK
 ) ELSE (
-  REM echo .NET 6 Desktop Runtime x64 が見当たりません。最初にインストールしてください。
+  REM echo .NET 8 Desktop Runtime x64 が見当たりません。最初にインストールしてください。
   GOTO NETDRNG
 )
 
 endlocal
 
 :NETDROK
-echo .NET 6 Desktop Runtime x64 を確認しました。インストール可能です（事前条件 1/2 ）。
+echo .NET 8 Desktop Runtime x64 を確認しました。インストール可能です（事前条件 1/2 ）。
 echo.
 
 
@@ -272,9 +279,9 @@ echo.
 GOTO EXITEND
 
 :NETDRNG
-echo 事前条件の .NET 6 Desktop Runtime x64 を確認できないため、インストールを継続できません。
-echo   Download .NET 6.0 （https://dotnet.microsoft.com/en-us/download/dotnet/6.0） から .NET Desktop Runtime x64 のインストーラーを入手してインストールするか、
-echo   winget install Microsoft.DotNet.DesktopRuntime.6 でインストールしてください （https://docs.microsoft.com/ja-jp/dotnet/core/install/windows?tabs=net60）
+echo 事前条件の .NET 8 Desktop Runtime x64 を確認できないため、インストールを継続できません。
+echo   Download .NET 8.0 （https://dotnet.microsoft.com/en-us/download/dotnet/8.0） から .NET Desktop Runtime - Windows x64 Installer を入手してインストールするか、
+echo   winget install Microsoft.DotNet.DesktopRuntime.8 でインストールしてください （https://docs.microsoft.com/ja-jp/dotnet/core/install/windows?tabs=net80）
 GOTO EXITEND
 
 :WVNG
