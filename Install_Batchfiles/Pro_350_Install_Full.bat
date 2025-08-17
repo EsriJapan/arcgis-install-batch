@@ -264,7 +264,7 @@ echo.
 REM Data Interoperability のインストール
 REM echo ArcGIS Pro 3.5 Data Interoperability のインストール...
 REM %windir%\System32\msiexec.exe /I "%curpath%\ArcGISProDataInterop\DataInteropPro.msi" ALLUSERS=1 /norestart /passive /qb
-REM %windir%\System32\msiexec.exe /I "%curpath%\ArcGISProDataInterop\DataInteropPro.msi" INSTALLDIR="F:\ArcGIS" /norestart /passive /qb
+REM %windir%\System32\msiexec.exe /I "%curpath%\ArcGISProDataInterop\DataInteropPro.msi" INSTALLDIR="F:\ArcGIS" ALLUSERS=1 /norestart /passive /qb
 REM echo ArcGIS Pro 3.5 Data Interoperability のインストール終了
 REM echo.
 
