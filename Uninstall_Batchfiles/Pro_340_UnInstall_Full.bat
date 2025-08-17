@@ -23,6 +23,8 @@ REM ---プロダクト コンポーネント---
 REM ArcGIS Pro
 REM ArcGIS Pro 3.4 Patch 1 （3.4.1）
 REM ArcGIS Pro 3.4 Patch 2 （3.4.2）
+REM ArcGIS Pro 3.4 Patch 3 （3.4.3）
+REM ArcGIS Pro 3.4 Patch 4 （3.4.4）
 REM ArcGIS Pro オフライン ヘルプ
 REM ArcGIS Data Interoperability for Pro （英語）
 REM ---データとコンテンツ---
@@ -36,6 +38,8 @@ echo -----------------------------------
 echo ・ArcGIS Pro
 echo ・ArcGIS Pro 3.4 Patch 1 （3.4.1）
 echo ・ArcGIS Pro 3.4 Patch 2 （3.4.2）
+echo ・ArcGIS Pro 3.4 Patch 3 （3.4.3）
+echo ・ArcGIS Pro 3.4 Patch 4 （3.4.4）
 echo ・ArcGIS Pro オフライン ヘルプ
 REM echo ・ArcGIS Data Interoperability for Pro （英語）
 echo ・ArcGIS Coordinate Systems Data （英語）
@@ -50,6 +54,12 @@ echo ArcGIS Pro 3.4 のアンインストールを開始します
 
 REM パッチのアンインストール
 echo パッチのアンインストール開始
+
+echo ArcGIS Pro 3.4 Patch 4 のアンインストール
+%windir%\System32\msiexec.exe /I "{F6FDD729-EC3F-4361-A98E-B592EEF0D445}" MSIPATCHREMOVE="{0655AA3A-A898-4C7C-9639-47F8F782F213}" /norestart /passive /qb
+
+echo ArcGIS Pro 3.4 Patch 3 のアンインストール
+%windir%\System32\msiexec.exe /I "{F6FDD729-EC3F-4361-A98E-B592EEF0D445}" MSIPATCHREMOVE="{D4C69A4B-BBEE-48CC-9E2D-03EBC36053BA}" /norestart /passive /qb
 
 echo ArcGIS Pro 3.4 Patch 2 のアンインストール
 %windir%\System32\msiexec.exe /I "{F6FDD729-EC3F-4361-A98E-B592EEF0D445}" MSIPATCHREMOVE="{C54F2A9E-07DF-4245-8B34-CD7FBF02A649}" /norestart /passive /qb
