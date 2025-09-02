@@ -23,6 +23,7 @@ REM ---プロダクト コンポーネント---
 REM ArcGIS Pro 3.5
 REM ArcGIS Pro 3.5 Patch 1 （3.5.1）
 REM ArcGIS Pro 3.5 Patch 2 （3.5.2）
+REM ArcGIS Pro 3.5 Patch 3 （3.5.3）
 REM ArcGIS Pro オフライン ヘルプ
 REM ArcGIS Data Interoperability for Pro （英語）
 REM ---データとコンテンツ---
@@ -36,6 +37,7 @@ echo -----------------------------------
 echo ・ArcGIS Pro 3.5
 echo ・ArcGIS Pro 3.5 Patch 1 （3.5.1）
 echo ・ArcGIS Pro 3.5 Patch 2 （3.5.2）
+echo ・ArcGIS Pro 3.5 Patch 3 （3.5.3）
 echo ・ArcGIS Pro オフライン ヘルプ
 REM echo ・ArcGIS Data Interoperability for Pro （英語）
 echo ・ArcGIS Coordinate Systems Data （英語）
@@ -50,6 +52,9 @@ echo ArcGIS Pro 3.5 のアンインストールを開始します
 
 REM パッチのアンインストール
 echo パッチのアンインストール開始
+
+echo ArcGIS Pro 3.5 Patch 3 のアンインストール
+%windir%\System32\msiexec.exe /I "{6AB7A2E6-6E45-4A2D-8E88-6B0856B4CB48}" MSIPATCHREMOVE="{1D2E9920-76B9-444B-9FE9-9802207F8DC8}" /norestart /passive /qb
 
 echo ArcGIS Pro 3.5 Patch 2 のアンインストール
 %windir%\System32\msiexec.exe /I "{6AB7A2E6-6E45-4A2D-8E88-6B0856B4CB48}" MSIPATCHREMOVE="{EBD7F7C5-A67F-4DCC-8788-B3EF0CC8B67E}" /norestart /passive /qb
