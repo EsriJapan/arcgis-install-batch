@@ -1,205 +1,205 @@
 @echo off
 REM ------------------------------
-REM ArcGIS Pro 3.3 ‚ÌˆêŠ‡ƒCƒ“ƒXƒg[ƒ‹
+REM ArcGIS Pro 3.3 ã®ä¸€æ‹¬ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 REM ------------------------------
 
 REM 
-REM ˆÈ‰º‚ğQl‚É‚µ‚Ä•ÒW‚µ‚Ü‚µ‚½
-REM QlFhttps://github.com/StanfordGeospatialCenter/arcgis-install-batch/blob/master/ArcGIS%2010.5.1/ArcGIS_10.5.1_Installation_Full_with_ArcHydro_ArcTutor_DataMaps_Patches.bat
+REM ä»¥ä¸‹ã‚’å‚è€ƒã«ã—ã¦ç·¨é›†ã—ã¾ã—ãŸ
+REM å‚è€ƒï¼šhttps://github.com/StanfordGeospatialCenter/arcgis-install-batch/blob/master/ArcGIS%2010.5.1/ArcGIS_10.5.1_Installation_Full_with_ArcHydro_ArcTutor_DataMaps_Patches.bat
 REM 
 
 
-REM ƒoƒbƒ`‚Å‚Ì.NET Framework ‚Ìƒo[ƒWƒ‡ƒ“ƒ`ƒFƒbƒN‚ÍˆÈ‰º‚ğQl‚É‚µ‚Ü‚µ‚½B
-REM Ql:https://www.atmarkit.co.jp/ait/articles/1210/26/news086.html
+REM ãƒãƒƒãƒã§ã®.NET Framework ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ãƒã‚§ãƒƒã‚¯ã¯ä»¥ä¸‹ã‚’å‚è€ƒã«ã—ã¾ã—ãŸã€‚
+REM å‚è€ƒ:https://www.atmarkit.co.jp/ait/articles/1210/26/news086.html
 REM 
-REM ƒŒƒWƒXƒgƒŠ‚Ì’l‚ÍMS‚ÌƒTƒCƒg‚É‚ ‚è‚Ü‚·B
-REM Ql:https://docs.microsoft.com/ja-jp/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed
+REM ãƒ¬ã‚¸ã‚¹ãƒˆãƒªã®å€¤ã¯MSã®ã‚µã‚¤ãƒˆã«ã‚ã‚Šã¾ã™ã€‚
+REM å‚è€ƒ:https://docs.microsoft.com/ja-jp/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed
 REM   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full
-REM   .NET Framework 4.8 ‚Ìê‡‚Í Release REG_DWORD ’l 528040
+REM   .NET Framework 4.8 ã®å ´åˆã¯ Release REG_DWORD å€¤ 528040
 REM 
 
 
-REM Pro 3.0 ‚Í.NET 6 Desktop Runtime x64 ‚ª•K—v‚Æ‚È‚é‚½‚ßA.NET Core version ‚Ìƒo[ƒWƒ‡ƒ“ƒ`ƒFƒbƒN‚Ì•”•ª‚ğ‘‚«’¼‚µi2022”N8Œj
-REM Pro 3.3 ‚Í.NET 8 Desktop Runtime x64 ‚¨‚æ‚Ñ Microsoft Edge WebView2 Runtime ‚Ì‘O’ñğŒ‚ª2‚Â‚É‘‚¦‚½i2024”N7Œj
+REM Pro 3.0 ã¯.NET 6 Desktop Runtime x64 ãŒå¿…è¦ã¨ãªã‚‹ãŸã‚ã€.NET Core version ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ãƒã‚§ãƒƒã‚¯ã®éƒ¨åˆ†ã‚’æ›¸ãç›´ã—ï¼ˆ2022å¹´8æœˆï¼‰
+REM Pro 3.3 ã¯.NET 8 Desktop Runtime x64 ãŠã‚ˆã³ Microsoft Edge WebView2 Runtime ã®å‰ææ¡ä»¶ãŒ2ã¤ã«å¢—ãˆãŸï¼ˆ2024å¹´7æœˆï¼‰
 REM 
-REM Ql: winget ‚Å‚Ì.NET ƒfƒXƒNƒgƒbƒv ƒ‰ƒ“ƒ^ƒCƒ€ ‚ğwinget ‚ÅƒCƒ“ƒXƒg[ƒ‹‚·‚éê‡
+REM å‚è€ƒ: winget ã§ã®.NET ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ— ãƒ©ãƒ³ã‚¿ã‚¤ãƒ  ã‚’winget ã§ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã™ã‚‹å ´åˆ
 REM   >winget install Microsoft.DotNet.DesktopRuntime.6
 REM   https://docs.microsoft.com/ja-jp/dotnet/core/install/windows?tabs=net60
 REM 
-REM QlF ƒŒƒWƒXƒgƒŠ‚Ì’l‚ğƒ`ƒFƒbƒN‚·‚é•û–@
+REM å‚è€ƒï¼š ãƒ¬ã‚¸ã‚¹ãƒˆãƒªã®å€¤ã‚’ãƒã‚§ãƒƒã‚¯ã™ã‚‹æ–¹æ³•
 REM   https://stackoverflow.com/questions/73336550/is-there-a-way-to-determine-via-registry-net-core-version-with-nsis
 REM   HKEY_LOCAL_MACHINE\SOFTWARE\dotnet\Setup\InstalledVersions\x64\sharedhost
-REM   Version REG_SZ ’l 6.0.x
+REM   Version REG_SZ å€¤ 6.0.x
 REM 
-REM   x64‚ÌƒŒƒWƒXƒgƒŠ‚Åˆê——‚ğæ“¾ix64‚ÌƒŒƒWƒXƒgƒŠ‚Åˆê——‚ğæ“¾‚µ‚ÄAREG_DWORD‚ÌƒL[‚ğƒ`ƒFƒbƒNj
+REM   x64ã®ãƒ¬ã‚¸ã‚¹ãƒˆãƒªã§ä¸€è¦§ã‚’å–å¾—ï¼ˆx64ã®ãƒ¬ã‚¸ã‚¹ãƒˆãƒªã§ä¸€è¦§ã‚’å–å¾—ã—ã¦ã€REG_DWORDã®ã‚­ãƒ¼ã‚’ãƒã‚§ãƒƒã‚¯ï¼‰
 REM   HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\dotnet\Setup\InstalledVersions\x64\sharedfx\Microsoft.WindowsDesktop.App
-REM   5.0.x REG_DWORD ’l 1
-REM   6.0.x REG_DWORD ’l 1 (x >= 5 : Pro ‚Í6.0.5 ˆÈã‚ª•K—v)
-REM   8.0.x REG_DWORD ’l 1 (Pro 3.3 ‚Í8.0.0 ˆÈã‚ª•K—v: 2024”N7Œ9“ú“_‚ÌÅV‚Í 8.0.6 )
+REM   5.0.x REG_DWORD å€¤ 1
+REM   6.0.x REG_DWORD å€¤ 1 (x >= 5 : Pro ã¯6.0.5 ä»¥ä¸ŠãŒå¿…è¦)
+REM   8.0.x REG_DWORD å€¤ 1 (Pro 3.3 ã¯8.0.0 ä»¥ä¸ŠãŒå¿…è¦: 2024å¹´7æœˆ9æ—¥æ™‚ç‚¹ã®æœ€æ–°ã¯ 8.0.6 )
 REM 
-REM QlF .NET SDK ‚ğƒCƒ“ƒXƒg[ƒ‹‚µ‚Ä‚¢‚éŠÂ‹«‚Å‚ ‚ê‚ÎAdotnet --list-runtimes ‚Åƒ‰ƒ“ƒ^ƒCƒ€‚Ìˆê——‚ğæ“¾‚µ‚Äƒ`ƒFƒbƒN‚·‚é•û–@‚ğ—˜—p‰Â”\
+REM å‚è€ƒï¼š .NET SDK ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ã„ã‚‹ç’°å¢ƒã§ã‚ã‚Œã°ã€dotnet --list-runtimes ã§ãƒ©ãƒ³ã‚¿ã‚¤ãƒ ã®ä¸€è¦§ã‚’å–å¾—ã—ã¦ãƒã‚§ãƒƒã‚¯ã™ã‚‹æ–¹æ³•ã‚’åˆ©ç”¨å¯èƒ½
 REM   >dotnet --list-runtimes
 REM   Microsoft.AspNetCore.All 2.1.28 [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.All]
-REM   `È—ª`
+REM   ï½çœç•¥ï½
 REM   Microsoft.NETCore.App 2.1.28 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
 REM   Microsoft.NETCore.App 3.1.15 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
 REM   Microsoft.NETCore.App 5.0.6 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
 REM   Microsoft.NETCore.App 6.0.8 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
 REM   Microsoft.NETCore.App 8.0.6 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
-REM   `È—ª`
+REM   ï½çœç•¥ï½
 REM   Microsoft.WindowsDesktop.App 5.0.6 [C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App]
 REM   Microsoft.WindowsDesktop.App 6.0.8 [C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App]
 REM   Microsoft.WindowsDesktop.App 8.0.6 [C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App]
 REM   
-REM   æ“¾‚µ‚½Runtime‚Ìˆê——‚©‚ç Microsoft.WindowsDesktop.App 6.0.x ‚ª‘¶İ‚·‚é‚©‚ğƒ`ƒFƒbƒN‚·‚é
-REM   ’ˆÓ–€Fƒoƒbƒ`ƒtƒ@ƒCƒ‹‚Ìfor•¶‚Ì’†‚Å•Ï”‚ğ‘€ì‚µ‚Ä‚àŠú‘Ò‚µ‚½‹““®‚É‚È‚ç‚È‚¢‚Æ‚«‚É‚Íu’x‰„ŠÂ‹«•Ï”‚Ì“WŠJ‚Æ‚¢‚¤‚à‚Ì‚ğg‚¤v‚Æ‚æ‚¢‚ç‚µ‚¢
-REM     QlFhttp://dalmore.blog7.fc2.com/blog-entry-79.html
+REM   å–å¾—ã—ãŸRuntimeã®ä¸€è¦§ã‹ã‚‰ Microsoft.WindowsDesktop.App 6.0.x ãŒå­˜åœ¨ã™ã‚‹ã‹ã‚’ãƒã‚§ãƒƒã‚¯ã™ã‚‹
+REM   æ³¨æ„äº‹é …ï¼šãƒãƒƒãƒãƒ•ã‚¡ã‚¤ãƒ«ã®foræ–‡ã®ä¸­ã§å¤‰æ•°ã‚’æ“ä½œã—ã¦ã‚‚æœŸå¾…ã—ãŸæŒ™å‹•ã«ãªã‚‰ãªã„ã¨ãã«ã¯ã€Œé…å»¶ç’°å¢ƒå¤‰æ•°ã®å±•é–‹ã¨ã„ã†ã‚‚ã®ã‚’ä½¿ã†ã€ã¨ã‚ˆã„ã‚‰ã—ã„
+REM     å‚è€ƒï¼šhttp://dalmore.blog7.fc2.com/blog-entry-79.html
 REM 
-REM   dotnet ƒRƒ}ƒ“ƒh‚ÌQlF
-REM     .NET ‚ªŠù‚ÉƒCƒ“ƒXƒg[ƒ‹‚³‚ê‚Ä‚¢‚é‚±‚Æ‚ğŠm”F‚·‚é•û–@Fhttps://docs.microsoft.com/ja-jp/dotnet/core/install/how-to-detect-installed-versions?pivots=os-windows
+REM   dotnet ã‚³ãƒãƒ³ãƒ‰ã®å‚è€ƒï¼š
+REM     .NET ãŒæ—¢ã«ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã•ã‚Œã¦ã„ã‚‹ã“ã¨ã‚’ç¢ºèªã™ã‚‹æ–¹æ³•ï¼šhttps://docs.microsoft.com/ja-jp/dotnet/core/install/how-to-detect-installed-versions?pivots=os-windows
 
 
 REM 
-REM ƒoƒbƒ`ƒtƒ@ƒCƒ‹‚ÉŠÜ‚ß‚Ä‚¢‚éƒvƒƒ_ƒNƒg
+REM ãƒãƒƒãƒãƒ•ã‚¡ã‚¤ãƒ«ã«å«ã‚ã¦ã„ã‚‹ãƒ—ãƒ­ãƒ€ã‚¯ãƒˆ
 REM 
-REM ƒoƒbƒ`ƒtƒ@ƒCƒ‹‚ÉŠÜ‚ß‚Äƒvƒƒ_ƒNƒg‚Í My Esri ‚©‚çƒ_ƒEƒ“ƒ[ƒh‚·‚éŸ‚Ì‚à‚Ì‚Å‚·B
+REM ãƒãƒƒãƒãƒ•ã‚¡ã‚¤ãƒ«ã«å«ã‚ã¦ãƒ—ãƒ­ãƒ€ã‚¯ãƒˆã¯ My Esri ã‹ã‚‰ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã™ã‚‹æ¬¡ã®ã‚‚ã®ã§ã™ã€‚
 REM 
-REM ---ƒvƒƒ_ƒNƒg ƒRƒ“ƒ|[ƒlƒ“ƒg---
+REM ---ãƒ—ãƒ­ãƒ€ã‚¯ãƒˆ ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ---
 REM ArcGIS Pro 3.3
-REM ArcGIS Pro 3.3 Patch 1 i3.3.1j
-REM ArcGIS Pro ƒIƒtƒ‰ƒCƒ“ ƒwƒ‹ƒv
-REM ArcGIS Data Interoperability for Pro i‰pŒêj
-REM ---ƒf[ƒ^‚ÆƒRƒ“ƒeƒ“ƒc---
-REM ArcGIS Coordinate Systems Data i‰pŒêj
+REM ArcGIS Pro 3.3 Patch 1 ï¼ˆ3.3.1ï¼‰
+REM ArcGIS Pro ã‚ªãƒ•ãƒ©ã‚¤ãƒ³ ãƒ˜ãƒ«ãƒ—
+REM ArcGIS Data Interoperability for Pro ï¼ˆè‹±èªï¼‰
+REM ---ãƒ‡ãƒ¼ã‚¿ã¨ã‚³ãƒ³ãƒ†ãƒ³ãƒ„---
+REM ArcGIS Coordinate Systems Data ï¼ˆè‹±èªï¼‰
 REM 
-REM ã‹L‚Ìƒ_ƒEƒ“ƒ[ƒh‚µ‚½ƒtƒ@ƒCƒ‹‚ğA‚»‚ê‚¼‚ê‰ğ“€æ‚ğ–{ƒoƒbƒ`ƒtƒ@ƒCƒ‹‚ğ’u‚¢‚½ƒtƒHƒ‹ƒ_[‚Éw’è‚µ‚Ä‰ğ“€‚ğs‚¢‚Ü‚·B
-REM Ql:ArcGIS Desktop ŠyXƒCƒ“ƒXƒg[ƒ‹ `ƒoƒbƒ` ƒtƒ@ƒCƒ‹‚Ìì¬•û–@‚ğ‚²Ğ‰î`
+REM ä¸Šè¨˜ã®ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã€ãã‚Œãã‚Œè§£å‡å…ˆã‚’æœ¬ãƒãƒƒãƒãƒ•ã‚¡ã‚¤ãƒ«ã‚’ç½®ã„ãŸãƒ•ã‚©ãƒ«ãƒ€ãƒ¼ã«æŒ‡å®šã—ã¦è§£å‡ã‚’è¡Œã„ã¾ã™ã€‚
+REM å‚è€ƒ:ArcGIS Desktop æ¥½ã€…ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ« ï½ãƒãƒƒãƒ ãƒ•ã‚¡ã‚¤ãƒ«ã®ä½œæˆæ–¹æ³•ã‚’ã”ç´¹ä»‹ï½
 REM https://blog.esrij.com/2018/03/30/post-29732/
 REM 
 
 echo.
 echo -----------------------------------
-echo ArcGIS Pro 3.3 ‚ÌˆêŠ‡ƒCƒ“ƒXƒg[ƒ‹ ‚Ì‘ÎÛ
+echo ArcGIS Pro 3.3 ã®ä¸€æ‹¬ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ« ã®å¯¾è±¡
 echo -----------------------------------
-echo EArcGIS Pro
-echo EArcGIS Pro 3.3 Patch 1 i3.3.1j
-echo EArcGIS Pro ƒIƒtƒ‰ƒCƒ“ ƒwƒ‹ƒv
-REM echo EArcGIS Data Interoperability for Pro i‰pŒêj
-echo EArcGIS Coordinate Systems Data i‰pŒêj
+echo ãƒ»ArcGIS Pro
+echo ãƒ»ArcGIS Pro 3.3 Patch 1 ï¼ˆ3.3.1ï¼‰
+echo ãƒ»ArcGIS Pro ã‚ªãƒ•ãƒ©ã‚¤ãƒ³ ãƒ˜ãƒ«ãƒ—
+REM echo ãƒ»ArcGIS Data Interoperability for Pro ï¼ˆè‹±èªï¼‰
+echo ãƒ»ArcGIS Coordinate Systems Data ï¼ˆè‹±èªï¼‰
 echo.
 
 set __COMPAT_LAYER=RunAsInvoker
 
-REM ‘Š‘ÎƒpƒX‚Åˆ—‚·‚é‚½‚ßƒoƒbƒ`ƒtƒ@ƒCƒ‹‚ÌÀsƒfƒBƒŒƒNƒgƒŠ‚ğİ’è
+REM ç›¸å¯¾ãƒ‘ã‚¹ã§å‡¦ç†ã™ã‚‹ãŸã‚ãƒãƒƒãƒãƒ•ã‚¡ã‚¤ãƒ«ã®å®Ÿè¡Œãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’è¨­å®š
 set curpath=%~dp0
 
 
-REM ƒfƒXƒNƒgƒbƒv‚ÌƒCƒ“ƒXƒg[ƒ‹
-echo ArcGIS Pro 3.3 ‚ÌƒCƒ“ƒXƒg[ƒ‹‚ğŠJn‚µ‚Ü‚·
+REM ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
+echo ArcGIS Pro 3.3 ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã‚’é–‹å§‹ã—ã¾ã™
 
 
-REM –‘O‚É•K—v‚È‚à‚Ì‚ğƒCƒ“ƒXƒg[ƒ‹ƒ`ƒFƒbƒN
+REM äº‹å‰ã«å¿…è¦ãªã‚‚ã®ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ãƒã‚§ãƒƒã‚¯
 REM 
-REM Pro 3.3 ‚Å–‘O‚É•K—v‚È‚à‚Ì‚Í.NET 8 Desktop Runtime x64 ‚¨‚æ‚Ñ Microsoft Edge WebView2 Runtime
+REM Pro 3.3 ã§äº‹å‰ã«å¿…è¦ãªã‚‚ã®ã¯.NET 8 Desktop Runtime x64 ãŠã‚ˆã³ Microsoft Edge WebView2 Runtime
 REM 
-REM a) .NET SDK ‚ğƒCƒ“ƒXƒg[ƒ‹‚µ‚Ä‚¢‚éŠÂ‹«‚Ìê‡
-REM dotnet --list-runtimes ‚Åƒ‰ƒ“ƒ^ƒCƒ€‚Ìˆê——‚ğæ“¾‚µ‚Äƒ`ƒFƒbƒN‚·‚é•û–@
+REM a) .NET SDK ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ã„ã‚‹ç’°å¢ƒã®å ´åˆ
+REM dotnet --list-runtimes ã§ãƒ©ãƒ³ã‚¿ã‚¤ãƒ ã®ä¸€è¦§ã‚’å–å¾—ã—ã¦ãƒã‚§ãƒƒã‚¯ã™ã‚‹æ–¹æ³•
 REM   >dotnet --list-runtimes
 REM   Microsoft.AspNetCore.All 2.1.28 [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.All]
-REM   `È—ª`
+REM   ï½çœç•¥ï½
 REM   Microsoft.NETCore.App 2.1.28 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
 REM   Microsoft.NETCore.App 3.1.15 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
 REM   Microsoft.NETCore.App 5.0.6 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
 REM   Microsoft.NETCore.App 6.0.8 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
 REM   Microsoft.NETCore.App 8.0.6 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
-REM   `È—ª`
+REM   ï½çœç•¥ï½
 REM   Microsoft.WindowsDesktop.App 5.0.6 [C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App]
 REM   Microsoft.WindowsDesktop.App 6.0.8 [C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App]
 REM   Microsoft.WindowsDesktop.App 8.0.6 [C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App]
 REM 
-REM   æ“¾‚µ‚½Runtime‚Ìˆê——‚©‚ç Microsoft.WindowsDesktop.App 6.0.x ‚ª‘¶İ‚·‚é‚©‚ğƒ`ƒFƒbƒN‚·‚é
-REM   ’ˆÓ–€Fƒoƒbƒ`ƒtƒ@ƒCƒ‹‚Ìfor•¶‚Ì’†‚Å•Ï”‚ğ‘€ì‚µ‚Ä‚àŠú‘Ò‚µ‚½‹““®‚É‚È‚ç‚È‚¢‚Æ‚«‚É‚Íu’x‰„ŠÂ‹«•Ï”‚Ì“WŠJ‚Æ‚¢‚¤‚à‚Ì‚ğg‚¤v‚Æ‚æ‚¢‚ç‚µ‚¢
-REM     QlFhttp://dalmore.blog7.fc2.com/blog-entry-79.html
+REM   å–å¾—ã—ãŸRuntimeã®ä¸€è¦§ã‹ã‚‰ Microsoft.WindowsDesktop.App 6.0.x ãŒå­˜åœ¨ã™ã‚‹ã‹ã‚’ãƒã‚§ãƒƒã‚¯ã™ã‚‹
+REM   æ³¨æ„äº‹é …ï¼šãƒãƒƒãƒãƒ•ã‚¡ã‚¤ãƒ«ã®foræ–‡ã®ä¸­ã§å¤‰æ•°ã‚’æ“ä½œã—ã¦ã‚‚æœŸå¾…ã—ãŸæŒ™å‹•ã«ãªã‚‰ãªã„ã¨ãã«ã¯ã€Œé…å»¶ç’°å¢ƒå¤‰æ•°ã®å±•é–‹ã¨ã„ã†ã‚‚ã®ã‚’ä½¿ã†ã€ã¨ã‚ˆã„ã‚‰ã—ã„
+REM     å‚è€ƒï¼šhttp://dalmore.blog7.fc2.com/blog-entry-79.html
 REM 
 REM setlocal enabledelayedexpansion
 REM set /A FULLVERSION=605
 REM set CHECK_DR=FALSE
 REM FOR /F "tokens=2,4,5,6,* delims=. " %%I IN ('dotnet --list-runtimes') DO (
-REM   REM Šm”F—p
+REM   REM ç¢ºèªç”¨
 REM   REM echo %%I %%J %%K %%L
 REM   REM   AspNetCore 5 0 6
 REM   REM   NETCore 6 0 8
 REM   REM   WindowsDesktop 5 0 6
-REM   REM                        “™‚Æo—Í‚³‚ê‚é‚Í‚¸
+REM   REM                        ç­‰ã¨å‡ºåŠ›ã•ã‚Œã‚‹ã¯ãš
 REM   IF "%%I%%J"=="WindowsDesktop6" (
 REM     SET /A FULLNETDRVAL=%%J%%K%%L
-REM     REM Šm”F—p
+REM     REM ç¢ºèªç”¨
 REM     REM echo !FULLNETDRVAL! ^>^= %FULLVERSION%
 REM     IF !FULLNETDRVAL! geq %FULLVERSION% SET CHECK_DR=TRUE
 REM   )
 REM )
 
-REM b) .NET SDK ‚ğƒCƒ“ƒXƒg[ƒ‹‚µ‚Ä‚¢‚È‚¢ŠÂ‹«‚Ìê‡ix64‚ÌƒŒƒWƒXƒgƒŠ‚Åˆê——‚ğæ“¾‚µ‚ÄAREG_DWORD‚ÌƒL[‚ğƒ`ƒFƒbƒNj
+REM b) .NET SDK ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ã„ãªã„ç’°å¢ƒã®å ´åˆï¼ˆx64ã®ãƒ¬ã‚¸ã‚¹ãƒˆãƒªã§ä¸€è¦§ã‚’å–å¾—ã—ã¦ã€REG_DWORDã®ã‚­ãƒ¼ã‚’ãƒã‚§ãƒƒã‚¯ï¼‰
 REM   reg query "HKLM\SOFTWARE\WOW6432Node\dotnet\Setup\InstalledVersions\x64\sharedfx\Microsoft.WindowsDesktop.App" /t "REG_DWORD"
-REM   5.0.x REG_DWORD ’l 1
-REM   6.0.x REG_DWORD ’l 1 (x >= 5 : Pro ‚Í6.0.5 ˆÈã‚ª•K—v)
-REM   8.0.x REG_DWORD ’l 1 (Pro 3.3 ‚Í8.0.0 ˆÈã‚ª•K—v: 2024”N7Œ9“ú“_‚ÌÅV‚Í 8.0.6 )
+REM   5.0.x REG_DWORD å€¤ 1
+REM   6.0.x REG_DWORD å€¤ 1 (x >= 5 : Pro ã¯6.0.5 ä»¥ä¸ŠãŒå¿…è¦)
+REM   8.0.x REG_DWORD å€¤ 1 (Pro 3.3 ã¯8.0.0 ä»¥ä¸ŠãŒå¿…è¦: 2024å¹´7æœˆ9æ—¥æ™‚ç‚¹ã®æœ€æ–°ã¯ 8.0.6 )
 REM 
 setlocal enabledelayedexpansion
 set /A FULLVERSION=800
 set CHECK_DR=FALSE
 FOR /F "tokens=1,2,3,* delims=. " %%I IN ('reg query "HKLM\SOFTWARE\WOW6432Node\dotnet\Setup\InstalledVersions\x64\sharedfx\Microsoft.WindowsDesktop.App" /t "REG_DWORD"') DO (
-  REM Šm”F—p
+  REM ç¢ºèªç”¨
   REM echo %%I %%J %%K %%L
-  REM 6 0 8 REG_DWORD 0x1 ‚Æ•\¦‚³‚ê‚é
-  REM 6 0 25 REG_DWORD 0x1 ‚Æ•\¦‚³‚ê‚é
-  REM 2024.8.2 - %%K ‚ª2Œ…‚Ìê‡‚Í”»’è‚ª³‚µ‚­‚È‚¢‚Ì‚ÅA4Œ…–Ú‚ğœŠO‚·‚é‚æ‚¤‚É•ÏX
+  REM 6 0 8 REG_DWORD 0x1 ã¨è¡¨ç¤ºã•ã‚Œã‚‹
+  REM 6 0 25 REG_DWORD 0x1 ã¨è¡¨ç¤ºã•ã‚Œã‚‹
+  REM 2024.8.2 - %%K ãŒ2æ¡ã®å ´åˆã¯åˆ¤å®šãŒæ­£ã—ããªã„ã®ã§ã€4æ¡ç›®ã‚’é™¤å¤–ã™ã‚‹ã‚ˆã†ã«å¤‰æ›´
   REM SET /A FULLNETDRVAL=%%I%%J%%K
   SET M=%%K
   SET N=!M:~0,1!
-  REM Šm”F—p
+  REM ç¢ºèªç”¨
   REM echo !M!
   REM echo !N!
   SET /A FULLNETDRVAL=%%I%%J!N!
-  REM Microsoft.WindowsDesktop.App 8.0.0 ˆÈã‚ªƒCƒ“ƒXƒg[ƒ‹‚³‚ê‚Ä‚¢‚éê‡
+  REM Microsoft.WindowsDesktop.App 8.0.0 ä»¥ä¸ŠãŒã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã•ã‚Œã¦ã„ã‚‹å ´åˆ
   IF !FULLNETDRVAL! geq %FULLVERSION% (
-    REM Šm”F—p
+    REM ç¢ºèªç”¨
     REM echo !FULLNETDRVAL! ^>^= %FULLVERSION%
     SET CHECK_DR=TRUE
   )
 )
 
 IF %CHECK_DR%==TRUE (
-  REM echo .NET 8 Desktop Runtime x64 ‚ğŠm”F‚µ‚Ü‚µ‚½BƒCƒ“ƒXƒg[ƒ‹‰Â”\‚Å‚·B
+  REM echo .NET 8 Desktop Runtime x64 ã‚’ç¢ºèªã—ã¾ã—ãŸã€‚ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«å¯èƒ½ã§ã™ã€‚
   GOTO NETDROK
 ) ELSE (
-  REM echo .NET 8 Desktop Runtime x64 ‚ªŒ©“–‚½‚è‚Ü‚¹‚ñBÅ‰‚ÉƒCƒ“ƒXƒg[ƒ‹‚µ‚Ä‚­‚¾‚³‚¢B
+  REM echo .NET 8 Desktop Runtime x64 ãŒè¦‹å½“ãŸã‚Šã¾ã›ã‚“ã€‚æœ€åˆã«ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ãã ã•ã„ã€‚
   GOTO NETDRNG
 )
 
 endlocal
 
 :NETDROK
-echo .NET 8 Desktop Runtime x64 ‚ğŠm”F‚µ‚Ü‚µ‚½BƒCƒ“ƒXƒg[ƒ‹‰Â”\‚Å‚·i–‘OğŒ 1/2 jB
+echo .NET 8 Desktop Runtime x64 ã‚’ç¢ºèªã—ã¾ã—ãŸã€‚ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«å¯èƒ½ã§ã™ï¼ˆäº‹å‰æ¡ä»¶ 1/2 ï¼‰ã€‚
 echo.
 
 
-REM c) Pro 3.3 ‚Å•K—v‚ÈMicrosoft Edge WebView2 Runtime‚Ìƒ`ƒFƒbƒN
-REM ƒNƒGƒŠ:
+REM c) Pro 3.3 ã§å¿…è¦ãªMicrosoft Edge WebView2 Runtimeã®ãƒã‚§ãƒƒã‚¯
+REM ã‚¯ã‚¨ãƒª:
 REM reg query "HKLM\SOFTWARE\WOW6432Node\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}" /v "pv"
-REM Œ‹‰Ê:
+REM çµæœ:
 REM HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}
 REM pv    REG_SZ    126.0.2592.87
-REM 3—ñ–Ú‚ªƒo[ƒWƒ‡ƒ“‚Ì‚æ‚¤‚È‚Ì‚ÅA"tokens=3 delims=. " ‚ÅÅ‰‚Ì 126 ‚¾‚¯‚ğ•Ï”‚ÉŠi”[‚·‚é 
+REM 3åˆ—ç›®ãŒãƒãƒ¼ã‚¸ãƒ§ãƒ³ã®ã‚ˆã†ãªã®ã§ã€"tokens=3 delims=. " ã§æœ€åˆã® 126 ã ã‘ã‚’å¤‰æ•°ã«æ ¼ç´ã™ã‚‹ 
 setlocal enabledelayedexpansion
 set /A FULLWVVERSION=117
 set CHECK_WV=FALSE
 FOR /F  "tokens=3 delims=. " %%I IN ('reg query "HKLM\SOFTWARE\WOW6432Node\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}" /v "pv"') DO (
-  REM Šm”F—p
+  REM ç¢ºèªç”¨
   REM echo %%I
   SET /A FULLWVVAL=%%I
   IF !FULLWVVAL! geq %FULLWVVERSION% (
-    REM Šm”F—p
+    REM ç¢ºèªç”¨
     REM echo !FULLWVVAL! ^>^= %FULLWVVERSION%
     SET CHECK_WV=TRUE
   )
@@ -214,80 +214,80 @@ IF %CHECK_WV%==TRUE (
 endlocal
 
 :WVOK
-echo WebView2 ‚ğŠm”F‚µ‚Ü‚µ‚½BƒCƒ“ƒXƒg[ƒ‹‰Â”\‚Å‚·i–‘OğŒ 2/2 jB
+echo WebView2 ã‚’ç¢ºèªã—ã¾ã—ãŸã€‚ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«å¯èƒ½ã§ã™ï¼ˆäº‹å‰æ¡ä»¶ 2/2 ï¼‰ã€‚
 echo.
 
 
-REM ArcGIS Pro –{‘Ì‚ÌƒCƒ“ƒXƒg[ƒ‹
-REM 2.8 ‚©‚çƒGƒ“ƒh ƒ†[ƒU[g—p‹–‘øŒ_–ñ‘ (EULA)‚ÌACCEPTEULA‚ª•K{ƒpƒ‰ƒ[ƒ^‚Æ‚µ‚Ä’Ç‰Á
-REM 3.3 ‚©‚çAIƒ‚ƒfƒ‹iƒZƒ}ƒ“ƒeƒBƒbƒN‚ÌŒŸõAƒc[ƒ‹‚Ì’ñˆÄj‚Ì‘I‘ğ‚ªƒIƒvƒVƒ‡ƒ“‚Æ‚µ‚Ä’Ç‰Áiƒoƒbƒ`ƒtƒ@ƒCƒ‹‚Ì’†‚Å‚Í2‚Â“ü‚ê‚é ADDLOCAL=ALL jB
-REM ArcGIS Pro‚ÌƒTƒCƒŒƒ“ƒgƒCƒ“ƒXƒg[ƒ‹‚Ìƒpƒ‰ƒ[ƒ^Ú×‚ÍƒCƒ“ƒXƒg[ƒ‹ƒKƒCƒh‚É‹LÚ‚³‚ê‚Ä‚¢‚Ü‚·
+REM ArcGIS Pro æœ¬ä½“ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
+REM 2.8 ã‹ã‚‰ã‚¨ãƒ³ãƒ‰ ãƒ¦ãƒ¼ã‚¶ãƒ¼ä½¿ç”¨è¨±è«¾å¥‘ç´„æ›¸ (EULA)ã®ACCEPTEULAãŒå¿…é ˆãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã¨ã—ã¦è¿½åŠ 
+REM 3.3 ã‹ã‚‰AIãƒ¢ãƒ‡ãƒ«ï¼ˆã‚»ãƒãƒ³ãƒ†ã‚£ãƒƒã‚¯ã®æ¤œç´¢ã€ãƒ„ãƒ¼ãƒ«ã®ææ¡ˆï¼‰ã®é¸æŠãŒã‚ªãƒ—ã‚·ãƒ§ãƒ³ã¨ã—ã¦è¿½åŠ ï¼ˆãƒãƒƒãƒãƒ•ã‚¡ã‚¤ãƒ«ã®ä¸­ã§ã¯2ã¤å…¥ã‚Œã‚‹ ADDLOCAL=ALL ï¼‰ã€‚
+REM ArcGIS Proã®ã‚µã‚¤ãƒ¬ãƒ³ãƒˆã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«æ™‚ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è©³ç´°ã¯ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã‚¬ã‚¤ãƒ‰ã«è¨˜è¼‰ã•ã‚Œã¦ã„ã¾ã™
 REM https://pro.arcgis.com/ja/pro-app/latest/get-started/arcgis-pro-installation-administration.htm
-echo ArcGIS Pro 3.3 –{‘Ì‚ÌƒCƒ“ƒXƒg[ƒ‹... ƒCƒ“ƒXƒg[ƒ‹‚É‚Í‚µ‚Î‚ç‚­ŠÔ‚ª‚©‚©‚è‚Ü‚·...
+echo ArcGIS Pro 3.3 æœ¬ä½“ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«... ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã«ã¯ã—ã°ã‚‰ãæ™‚é–“ãŒã‹ã‹ã‚Šã¾ã™...
 %windir%\System32\msiexec.exe /I "%curpath%\ArcGISPro_Japanese\SetupFiles\ArcGISPro.msi" ALLUSERS=1 ACCEPTEULA=YES ADDLOCAL=ALL /norestart /passive /qb
 
-REM ArcGIS Pro “ú–{ŒêƒpƒbƒN‚ÌƒCƒ“ƒXƒg[ƒ‹
-echo ArcGIS Pro 3.3 “ú–{ŒêƒpƒbƒN ‚ÌƒCƒ“ƒXƒg[ƒ‹...
+REM ArcGIS Pro æ—¥æœ¬èªãƒ‘ãƒƒã‚¯ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
+echo ArcGIS Pro 3.3 æ—¥æœ¬èªãƒ‘ãƒƒã‚¯ ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«...
 %windir%\System32\msiexec.exe /I "%curpath%\ArcGISPro_Japanese\SetupFiles\Supplement\ProJapaneseLP.msi" /norestart /passive /qb
 
 
-REM ArcGIS HelpƒCƒ“ƒXƒg[ƒ‹
-echo ArcGIS Pro ƒIƒtƒ‰ƒCƒ“ ƒwƒ‹ƒv ‚ÌƒCƒ“ƒXƒg[ƒ‹...
+REM ArcGIS Helpã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
+echo ArcGIS Pro ã‚ªãƒ•ãƒ©ã‚¤ãƒ³ ãƒ˜ãƒ«ãƒ— ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«...
 %windir%\System32\msiexec.exe /I "%curpath%\ArcGISProHelp_Japanese\ArcGISProHelp_Japanese.msi" /norestart /passive /qb
 
 
-echo ArcGIS Pro 3.3 ‚ÌƒCƒ“ƒXƒg[ƒ‹I—¹
+echo ArcGIS Pro 3.3 ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«çµ‚äº†
 echo.
 
 
-REM ƒpƒbƒ`‚ÌƒCƒ“ƒXƒg[ƒ‹
-echo ƒpƒbƒ`‚ÌƒCƒ“ƒXƒg[ƒ‹ŠJn
+REM ãƒ‘ãƒƒãƒã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
+echo ãƒ‘ãƒƒãƒã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«é–‹å§‹
 
-REM echo ArcGIS Pro 3.3 Patch 1 ‚ÌƒCƒ“ƒXƒg[ƒ‹...
+REM echo ArcGIS Pro 3.3 Patch 1 ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«...
 %windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_331_190126.msp" /norestart /passive /qb
 
-echo ƒpƒbƒ`‚ÌƒCƒ“ƒXƒg[ƒ‹I—¹
+echo ãƒ‘ãƒƒãƒã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«çµ‚äº†
 echo.
 
-REM ArcGIS Coordinate Systems Data ‚ÌƒCƒ“ƒXƒg[ƒ‹
-echo ArcGIS Coordinate Systems Data ‚ÌƒCƒ“ƒXƒg[ƒ‹...
+REM ArcGIS Coordinate Systems Data ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
+echo ArcGIS Coordinate Systems Data ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«...
 %windir%\System32\msiexec.exe /I "%curpath%\CoordinateSystemsData\SetupFiles\CSD.msi" /norestart /passive /qb
-echo ArcGIS Coordinate Systems Data ‚ÌƒCƒ“ƒXƒg[ƒ‹I—¹
+echo ArcGIS Coordinate Systems Data ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«çµ‚äº†
 echo.
 
-REM Data Interoperability ‚ÌƒCƒ“ƒXƒg[ƒ‹
-REM echo ArcGIS Pro 3.3 Data Interoperability ‚ÌƒCƒ“ƒXƒg[ƒ‹...
+REM Data Interoperability ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
+REM echo ArcGIS Pro 3.3 Data Interoperability ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«...
 REM %windir%\System32\msiexec.exe /I "%curpath%\ArcGISProDataInterop\DataInteropPro.msi" ALLUSERS=1 /norestart /passive /qb
-REM %windir%\System32\msiexec.exe /I "%curpath%\ArcGISProDataInterop\DataInteropPro.msi" INSTALLDIR="F:\ArcGIS" /norestart /passive /qb
-REM echo ArcGIS Pro 3.3 Data Interoperability ‚ÌƒCƒ“ƒXƒg[ƒ‹I—¹
+REM %windir%\System32\msiexec.exe /I "%curpath%\ArcGISProDataInterop\DataInteropPro.msi" INSTALLDIR="F:\ArcGIS" ALLUSERS=1 /norestart /passive /qb
+REM echo ArcGIS Pro 3.3 Data Interoperability ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«çµ‚äº†
 REM echo.
 
-REM Data Interoperability ƒpƒbƒ`‚ÌƒCƒ“ƒXƒg[ƒ‹
-REM echo Data Interoperability ƒpƒbƒ`‚ÌƒCƒ“ƒXƒg[ƒ‹ŠJn
+REM Data Interoperability ãƒ‘ãƒƒãƒã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
+REM echo Data Interoperability ãƒ‘ãƒƒãƒã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«é–‹å§‹
 REM 
 REM 
-REM echo Data Interoperability ƒpƒbƒ`‚ÌƒCƒ“ƒXƒg[ƒ‹I—¹
+REM echo Data Interoperability ãƒ‘ãƒƒãƒã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«çµ‚äº†
 REM echo.
 
-REM ‚»‚Ì‘¼:ArcGIS Pro —p ST_Geometry ƒ‰ƒCƒuƒ‰ƒŠ ‚â ODBC Driver‚È‚Ç‚Í•K—v‚É‰‚¶‚Ä
-REM ‚»‚Ì‘¼:“ú–{—p’n}ƒVƒ“ƒ{ƒ‹‚È‚Ç
+REM ãã®ä»–:ArcGIS Pro ç”¨ ST_Geometry ãƒ©ã‚¤ãƒ–ãƒ©ãƒª ã‚„ ODBC Driverãªã©ã¯å¿…è¦ã«å¿œã˜ã¦
+REM ãã®ä»–:æ—¥æœ¬ç”¨åœ°å›³ã‚·ãƒ³ãƒœãƒ«ãªã©
 echo.
-echo ’1)ArcGIS Pro 3.3 —p ƒf[ƒ^ƒx[ƒXƒTƒ|[ƒgƒtƒ@ƒCƒ‹ ‚Í•K—v‚É‰‚¶‚ÄMy Esri‚©‚ç“üè‚µ‚ÄƒCƒ“ƒXƒg[ƒ‹‚µ‚Ä‚­‚¾‚³‚¢
-echo ’2)‚»‚Ì‘¼A•ÏŠ·ƒc[ƒ‹A“ú–{—p’n}ƒVƒ“ƒ{ƒ‹ ‚Í•K—v‚É‰‚¶‚ÄArcGIS ƒŠƒ\[ƒXWihttps://doc.esrij.com/pro/get-started/setup/user/j‚ğQÆ‚ÌãAƒCƒ“ƒXƒg[ƒ‹‚µ‚Ä‚­‚¾‚³‚¢
+echo æ³¨1)ArcGIS Pro 3.3 ç”¨ ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã‚µãƒãƒ¼ãƒˆãƒ•ã‚¡ã‚¤ãƒ« ã¯å¿…è¦ã«å¿œã˜ã¦My Esriã‹ã‚‰å…¥æ‰‹ã—ã¦ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ãã ã•ã„
+echo æ³¨2)ãã®ä»–ã€å¤‰æ›ãƒ„ãƒ¼ãƒ«ã€æ—¥æœ¬ç”¨åœ°å›³ã‚·ãƒ³ãƒœãƒ« ã¯å¿…è¦ã«å¿œã˜ã¦ArcGIS ãƒªã‚½ãƒ¼ã‚¹é›†ï¼ˆhttps://doc.esrij.com/pro/get-started/setup/user/ï¼‰ã‚’å‚ç…§ã®ä¸Šã€ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ãã ã•ã„
 echo.
 
 GOTO EXITEND
 
 :NETDRNG
-echo –‘OğŒ‚Ì .NET 8 Desktop Runtime x64 ‚ğŠm”F‚Å‚«‚È‚¢‚½‚ßAƒCƒ“ƒXƒg[ƒ‹‚ğŒp‘±‚Å‚«‚Ü‚¹‚ñB
-echo   Download .NET 8.0 ihttps://dotnet.microsoft.com/en-us/download/dotnet/8.0j ‚©‚ç .NET Desktop Runtime - Windows x64 Installer ‚ğ“üè‚µ‚ÄƒCƒ“ƒXƒg[ƒ‹‚·‚é‚©A
-echo   winget install Microsoft.DotNet.DesktopRuntime.8 ‚ÅƒCƒ“ƒXƒg[ƒ‹‚µ‚Ä‚­‚¾‚³‚¢ ihttps://docs.microsoft.com/ja-jp/dotnet/core/install/windows?tabs=net80j
+echo äº‹å‰æ¡ä»¶ã® .NET 8 Desktop Runtime x64 ã‚’ç¢ºèªã§ããªã„ãŸã‚ã€ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã‚’ç¶™ç¶šã§ãã¾ã›ã‚“ã€‚
+echo   Download .NET 8.0 ï¼ˆhttps://dotnet.microsoft.com/en-us/download/dotnet/8.0ï¼‰ ã‹ã‚‰ .NET Desktop Runtime - Windows x64 Installer ã‚’å…¥æ‰‹ã—ã¦ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã™ã‚‹ã‹ã€
+echo   winget install Microsoft.DotNet.DesktopRuntime.8 ã§ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ãã ã•ã„ ï¼ˆhttps://docs.microsoft.com/ja-jp/dotnet/core/install/windows?tabs=net80ï¼‰
 GOTO EXITEND
 
 :WVNG
-echo –‘OğŒ‚Ì Microsoft Edge WebView2 Runtime ‚ğŠm”F‚Å‚«‚È‚¢‚½‚ßAƒCƒ“ƒXƒg[ƒ‹‚ğŒp‘±‚Å‚«‚Ü‚¹‚ñB
-echo   Download  ihttps://developer.microsoft.com/en-us/microsoft-edge/webview2?form=MA13LH#downloadj ‚©‚ç 
-echo   Evergreen Bootstrapper (x64) ‚à‚µ‚­‚Í Evergreen Standalone Installer (x64) ‚ğ“üè‚µ‚ÄƒCƒ“ƒXƒg[ƒ‹‚µ‚Ä‚­‚¾‚³‚¢B
+echo äº‹å‰æ¡ä»¶ã® Microsoft Edge WebView2 Runtime ã‚’ç¢ºèªã§ããªã„ãŸã‚ã€ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã‚’ç¶™ç¶šã§ãã¾ã›ã‚“ã€‚
+echo   Download  ï¼ˆhttps://developer.microsoft.com/en-us/microsoft-edge/webview2?form=MA13LH#downloadï¼‰ ã‹ã‚‰ 
+echo   Evergreen Bootstrapper (x64) ã‚‚ã—ãã¯ Evergreen Standalone Installer (x64) ã‚’å…¥æ‰‹ã—ã¦ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ãã ã•ã„ã€‚
 GOTO EXITEND
 
 :EXITEND
