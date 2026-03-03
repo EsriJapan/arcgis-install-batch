@@ -1,6 +1,6 @@
 @echo off
 REM ------------------------------
-REM ArcGIS Pro 3.5 の一括インストール
+REM ArcGIS Pro 3.6 の一括インストール
 REM ------------------------------
 
 REM 
@@ -65,13 +65,9 @@ REM
 REM バッチファイルに含めてプロダクトは My Esri からダウンロードする次のものです。
 REM 
 REM ---プロダクト コンポーネント---
-REM ArcGIS Pro 3.5
-REM ArcGIS Pro 3.5 Patch 1 （3.5.1）
-REM ArcGIS Pro 3.5 Patch 2 （3.5.2）
-REM ArcGIS Pro 3.5 Patch 3 （3.5.3）
-REM ArcGIS Pro 3.5 Patch 4 （3.5.4）
-REM ArcGIS Pro 3.5 Patch 5 （3.5.5）
-REM ArcGIS Pro 3.5 Patch 6 （3.5.6）
+REM ArcGIS Pro 3.6
+REM ArcGIS Pro 3.6 Patch 1 （3.6.1）
+REM ArcGIS Pro 3.6 Patch 2 （3.6.2）
 REM ArcGIS Pro オフライン ヘルプ
 REM ArcGIS Data Interoperability for Pro （英語）
 REM ---データとコンテンツ---
@@ -84,15 +80,11 @@ REM
 
 echo.
 echo -----------------------------------
-echo ArcGIS Pro 3.5 の一括インストール の対象
+echo ArcGIS Pro 3.6 の一括インストール の対象
 echo -----------------------------------
-echo ・ArcGIS Pro 3.5
-echo ・ArcGIS Pro 3.5 Patch 1 （3.5.1）
-echo ・ArcGIS Pro 3.5 Patch 2 （3.5.2）
-echo ・ArcGIS Pro 3.5 Patch 3 （3.5.3）
-echo ・ArcGIS Pro 3.5 Patch 4 （3.5.4）
-echo ・ArcGIS Pro 3.5 Patch 5 （3.5.5）
-echo ・ArcGIS Pro 3.5 Patch 6 （3.5.6）
+echo ・ArcGIS Pro 3.6
+echo ・ArcGIS Pro 3.6 Patch 1 （3.6.1）
+echo ・ArcGIS Pro 3.6 Patch 2 （3.6.2）
 echo ・ArcGIS Pro オフライン ヘルプ
 REM echo ・ArcGIS Data Interoperability for Pro （英語）
 echo ・ArcGIS Coordinate Systems Data （英語）
@@ -105,7 +97,7 @@ set curpath=%~dp0
 
 
 REM デスクトップのインストール
-echo ArcGIS Pro 3.5 のインストールを開始します
+echo ArcGIS Pro 3.6 のインストールを開始します
 
 
 REM 事前に必要なものをインストールチェック
@@ -234,11 +226,11 @@ REM 3.3 からAIモデル（セマンティックの検索、ツールの提案）の選択がオプションとし
 REM 3.4 からAIモデル（ロケーターの作成）の選択がオプションとして追加（バッチファイルの中では3つ入れる ADDLOCAL=ALL ）。
 REM ArcGIS Proのサイレントインストール時のパラメータ詳細はインストールガイドに記載されています
 REM https://pro.arcgis.com/ja/pro-app/latest/get-started/arcgis-pro-installation-administration.htm
-echo ArcGIS Pro 3.5 本体のインストール... インストールにはしばらく時間がかかります...
+echo ArcGIS Pro 3.6 本体のインストール... インストールにはしばらく時間がかかります...
 %windir%\System32\msiexec.exe /I "%curpath%\ArcGISPro_Japanese\SetupFiles\ArcGISPro.msi" ALLUSERS=1 ACCEPTEULA=YES ADDLOCAL=ALL /norestart /passive /qb
 
 REM ArcGIS Pro 日本語パックのインストール
-echo ArcGIS Pro 3.5 日本語パック のインストール...
+echo ArcGIS Pro 3.6 日本語パック のインストール...
 %windir%\System32\msiexec.exe /I "%curpath%\ArcGISPro_Japanese\SetupFiles\Supplement\ProJapaneseLP.msi" /norestart /passive /qb
 
 
@@ -247,30 +239,18 @@ echo ArcGIS Pro オフライン ヘルプ のインストール...
 %windir%\System32\msiexec.exe /I "%curpath%\ArcGISProHelp_Japanese\ArcGISProHelp_Japanese.msi" /norestart /passive /qb
 
 
-echo ArcGIS Pro 3.5 のインストール終了
+echo ArcGIS Pro 3.6 のインストール終了
 echo.
 
 
 REM パッチのインストール
 echo パッチのインストール開始
 
-echo ArcGIS Pro 3.5 Patch 1 のインストール...
-%windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_351_195509.msp" /norestart /passive /qb
+echo ArcGIS Pro 3.6 Patch 1 のインストール...
+%windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_361_198430.msp" /norestart /passive /qb
 
-echo ArcGIS Pro 3.5 Patch 2 のインストール...
-%windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_352_195508.msp" /norestart /passive /qb
-
-echo ArcGIS Pro 3.5 Patch 3 のインストール...
-%windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_353_195507.msp" /norestart /passive /qb
-
-echo ArcGIS Pro 3.5 Patch 4 のインストール...
-%windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_354_195506.msp" /norestart /passive /qb
-
-echo ArcGIS Pro 3.5 Patch 5 のインストール...
-%windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_355_195505.msp" /norestart /passive /qb
-
-echo ArcGIS Pro 3.5 Patch 6 のインストール...
-%windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_356_198658.msp" /norestart /passive /qb
+echo ArcGIS Pro 3.6 Patch 2 のインストール...
+%windir%\System32\msiexec.exe /p "%curpath%\ArcGISPro_Patches\ArcGIS_Pro_362_198429.msp" /norestart /passive /qb
 
 echo パッチのインストール終了
 echo.
@@ -282,10 +262,10 @@ echo ArcGIS Coordinate Systems Data のインストール終了
 echo.
 
 REM Data Interoperability のインストール
-REM echo ArcGIS Pro 3.5 Data Interoperability のインストール...
+REM echo ArcGIS Pro 3.6 Data Interoperability のインストール...
 REM %windir%\System32\msiexec.exe /I "%curpath%\ArcGISProDataInterop\DataInteropPro.msi" ALLUSERS=1 /norestart /passive /qb
 REM %windir%\System32\msiexec.exe /I "%curpath%\ArcGISProDataInterop\DataInteropPro.msi" INSTALLDIR="F:\ArcGIS" ALLUSERS=1 /norestart /passive /qb
-REM echo ArcGIS Pro 3.5 Data Interoperability のインストール終了
+REM echo ArcGIS Pro 3.6 Data Interoperability のインストール終了
 REM echo.
 
 REM Data Interoperability パッチのインストール
@@ -298,7 +278,7 @@ REM echo.
 REM その他:ArcGIS Pro 用 ST_Geometry ライブラリ や ODBC Driverなどは必要に応じて
 REM その他:日本用地図シンボルなど
 echo.
-echo 注1)ArcGIS Pro 3.5 用 データベースサポートファイル は必要に応じてMy Esriから入手してインストールしてください
+echo 注1)ArcGIS Pro 3.6 用 データベースサポートファイル は必要に応じてMy Esriから入手してインストールしてください
 echo 注2)その他、変換ツール、日本用地図シンボル は必要に応じてArcGIS リソース集（https://doc.esrij.com/pro/get-started/setup/user/）を参照の上、インストールしてください
 echo.
 

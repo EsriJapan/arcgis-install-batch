@@ -24,6 +24,9 @@ REM ArcGIS Pro 3.5
 REM ArcGIS Pro 3.5 Patch 1 （3.5.1）
 REM ArcGIS Pro 3.5 Patch 2 （3.5.2）
 REM ArcGIS Pro 3.5 Patch 3 （3.5.3）
+REM ArcGIS Pro 3.5 Patch 4 （3.5.4）
+REM ArcGIS Pro 3.5 Patch 5 （3.5.5）
+REM ArcGIS Pro 3.5 Patch 6 （3.5.6）
 REM ArcGIS Pro オフライン ヘルプ
 REM ArcGIS Data Interoperability for Pro （英語）
 REM ---データとコンテンツ---
@@ -32,12 +35,15 @@ REM
 
 echo.
 echo -----------------------------------
-echo ArcGIS Pro 3.5 の一括アンアンインストール の対象
+echo ArcGIS Pro 3.5 の一括アンインストール の対象
 echo -----------------------------------
 echo ・ArcGIS Pro 3.5
 echo ・ArcGIS Pro 3.5 Patch 1 （3.5.1）
 echo ・ArcGIS Pro 3.5 Patch 2 （3.5.2）
 echo ・ArcGIS Pro 3.5 Patch 3 （3.5.3）
+echo ・ArcGIS Pro 3.5 Patch 4 （3.5.4）
+echo ・ArcGIS Pro 3.5 Patch 5 （3.5.5）
+echo ・ArcGIS Pro 3.5 Patch 6 （3.5.6）
 echo ・ArcGIS Pro オフライン ヘルプ
 REM echo ・ArcGIS Data Interoperability for Pro （英語）
 echo ・ArcGIS Coordinate Systems Data （英語）
@@ -52,6 +58,15 @@ echo ArcGIS Pro 3.5 のアンインストールを開始します
 
 REM パッチのアンインストール
 echo パッチのアンインストール開始
+
+echo ArcGIS Pro 3.5 Patch 6 のアンインストール
+%windir%\System32\msiexec.exe /I "{6AB7A2E6-6E45-4A2D-8E88-6B0856B4CB48}" MSIPATCHREMOVE="{F0C42F07-AB7E-4F56-A5AC-B1EE1F128A26}" /norestart /passive /qb
+
+echo ArcGIS Pro 3.5 Patch 5 のアンインストール
+%windir%\System32\msiexec.exe /I "{6AB7A2E6-6E45-4A2D-8E88-6B0856B4CB48}" MSIPATCHREMOVE="{45CF056E-733D-455E-BABD-2E46F9F0D4F8}" /norestart /passive /qb
+
+echo ArcGIS Pro 3.5 Patch 4 のアンインストール
+%windir%\System32\msiexec.exe /I "{6AB7A2E6-6E45-4A2D-8E88-6B0856B4CB48}" MSIPATCHREMOVE="{64B71B37-09D0-458E-8B77-8FB080B9E554}" /norestart /passive /qb
 
 echo ArcGIS Pro 3.5 Patch 3 のアンインストール
 %windir%\System32\msiexec.exe /I "{6AB7A2E6-6E45-4A2D-8E88-6B0856B4CB48}" MSIPATCHREMOVE="{1D2E9920-76B9-444B-9FE9-9802207F8DC8}" /norestart /passive /qb
