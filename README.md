@@ -35,6 +35,7 @@
 * ArcGIS Pro 3.4 用のものをサンプルとして追加しました（2025/02/07）。  
 * ArcGIS Pro 3.5 用のものをサンプルとして追加しました（2025/08/17）。  
 * ArcGIS Pro 3.6 用のものをサンプルとして追加しました（2026/03/02）。  
+* ArcGIS Pro 3.7 用のものをサンプルとして追加しました（2026/09/25）。本バージョンから、.NET の事前条件チェックを .NET 10 Desktop Runtime x64 および Microsoft Edge WebView2 Runtime に変更しています。また、Coordinate Systems Data, Document Center, Data Interoperability はインストールをオプションで選択できるようにしています。
 
 
 インストーラの構成は他のバージョンでもほとんど変わりませんが、パッチファイル（特に任意インストールのパッチファイル）の要/不要はお使いの環境によって異なりますので、適宜判断して編集してください。
